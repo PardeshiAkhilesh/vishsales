@@ -22,7 +22,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oneplus-nord-ce4-lite-5g-128-gb-8-gb-ram-mega-blue-mobile-phone/609442145",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "ba9ed52b-f18e-481f-9d89-f8f641a7c8dc",
@@ -47,7 +47,7 @@
             "battery": "5100 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oppo-k12x-5g-128-gb-6-gb-ram-midnight-navy-mobile-phone/609630871",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "16d51c48-18dc-4e11-b0f6-e630bd19aecf",
@@ -72,7 +72,7 @@
             "battery": "6000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oppo-k13x-5g-128-gb-6-gb-ram-midnight-violet-mobile-phone/611708079",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "1702e0a4-b315-4d9b-bd69-2fec2da4a25f",
@@ -97,7 +97,7 @@
             "battery": "6000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oppo-k13x-5g-128-gb-6-gb-ram-sunset-peach-mobile-phone/611708078",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "fa2128ea-fa16-4e88-b0fd-6303f4463d25",
@@ -122,7 +122,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/realme-p1-speed-5g-128-gb-8-gb-ram-brushed-blue-mobile-phone/611174186",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "c92b7a76-d77d-45df-a63e-ac77079c68e5",
@@ -146,7 +146,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oneplus-nord-ce4-8-gb-ram-256-gb-dark-chrome-mobile-phone/608658390",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "9a5af093-da94-49d9-a1e8-2cc61e5f0ee7",
@@ -171,7 +171,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oneplus-nord-ce4-lite-5g-128-gb-8-gb-ram-ultra-orange-mobile-phone/609442147",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "eb4ff451-3535-489d-981a-cdfc0c762fdb",
@@ -196,7 +196,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oneplus-nord-ce4-8-gb-ram-128-gb-celadon-marble-mobile-phone/608658389",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "d74e1115-f22f-46eb-98c3-3ec9639df690",
@@ -221,7 +221,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oneplus-nord-ce4-8-gb-ram-256-gb-celadon-marble-mobile-phone/608658391",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "3268219f-5d45-462b-9b27-2d515fff0a99",
@@ -245,7 +245,7 @@
             "battery": "6500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-t4x-5g-6gb-ram-128gb-storage-pronto-purple-smartphone/611181925",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "c1249fd1-655a-425c-afd5-2d27b80ad456",
@@ -270,7 +270,7 @@
             "battery": ""
         },
         "product_link": "https://www.jiomart.com/p/electronics/apple-iphone-16-256-gb-ultramarine/609946231",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "495f1510-ab93-4581-a282-548f25bb2112",
@@ -295,7 +295,7 @@
             "battery": ""
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-t4x-5g-6gb-ram-128gb-storage-marine-blue-smartphone/611181922",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "ea07ea99-0033-4a7e-a56b-df272f8f0ea7",
@@ -320,7 +320,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/poco-m5-128-gb-6-gb-ram-power-black-mobile-phone/594861536",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "6945cde8-4911-47be-96f6-b4cc62481065",
@@ -344,7 +344,7 @@
             "battery": ""
         },
         "product_link": "https://www.jiomart.com/p/electronics/apple-iphone-16-128-gb-ultramarine/609946226",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "e7076659-9ede-49e1-880d-751b4409e367",
@@ -369,7 +369,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/realme-narzo-n65-5g-128-gb-4-gb-ram-amber-gold-mobile-phone/609971944",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "1837775b-00c8-45cc-aec9-ea27e27c12f0",
@@ -394,7 +394,7 @@
             "battery": "5160 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/poco-c75-5g-64-gb-4-gb-ram-aqua-mobile-phone/610767900",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "0f8acb3c-195d-42c6-a43d-bb2d169c4ab9",
@@ -419,7 +419,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oneplus-nord-ce4-8-gb-ram-128-gb-dark-chrome-mobile-phone/608658388",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "4db0691e-1204-4b76-bd79-269e61e2c6cb",
@@ -444,7 +444,7 @@
             "battery": "4404 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/google-pixel-8a-128-gb-8-gb-ram-porcelain-mobile-phone/609833176",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "960cbb54-b7bd-4dda-ab00-89837d498dfb",
@@ -469,7 +469,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/google-pixel-9a-256-gb-8-gb-ram-obsidian-mobile-phone/611168628",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "cae3c0c8-dcfb-4c80-a7f9-90c4b64faa82",
@@ -494,7 +494,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/realme-p1-speed-5g-256-gb-12-gb-ram-textured-titanium-mobile-phone/611174006",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "785b0e19-c361-4492-9fc8-17a93dc22854",
@@ -519,7 +519,7 @@
             "battery": "5200 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-a5-64-gb-3-gb-ram-blue-mobile-phone/611316005",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "9276c274-2820-4512-97d3-3d5abae365aa",
@@ -543,7 +543,7 @@
             "battery": "6000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oppo-k13x-5g-128-gb-4-gb-ram-midnight-violet-mobile-phone/611708077",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "55cfb75f-511a-4639-b999-4e304c2c922f",
@@ -568,7 +568,7 @@
             "battery": "5850 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oneplus-13s-512-gb-12-gb-ram-green-silk-mobile-phone/611603854",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "0703eb79-cf55-4930-8b61-ee9ede7a23b0",
@@ -593,7 +593,7 @@
             "battery": "5100 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oppo-k12x-5g-256-gb-8-gb-ram-feather-pink-mobile-phone/610028197",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "bc131a89-2813-46aa-9efe-41f1886ac5f6",
@@ -617,7 +617,7 @@
             "battery": "5850 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oneplus-13s-512-gb-12-gb-ram-black-velvet-mobile-phone/611603856",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "5958acdf-01b2-494c-90ba-88b185b52ed9",
@@ -642,7 +642,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/poco-m4-5g-128-gb-6-gb-ram-cool-blue-mobile-phone/594282562",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "b079dd75-088c-46c6-99b1-cfc2801f3372",
@@ -667,7 +667,7 @@
             "battery": "7000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oppo-k13-128-gb-8-gb-ram-icy-purple-mobile-phone/611346221",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "cda9ad89-518b-47f9-9670-24f32701069c",
@@ -692,7 +692,7 @@
             "battery": "5200 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-a5-64-gb-3-gb-ram-gold-mobile-phone/611315988",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "5b2ef0fb-b298-4126-9db7-f72e3d1647f1",
@@ -717,7 +717,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/google-pixel-9a-256-gb-8-gb-ram-porcelain-mobile-phone/611168630",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "b5d799f7-b300-4631-85b3-46526dfa1209",
@@ -742,7 +742,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/google-pixel-9a-256-gb-8-gb-ram-iris-mobile-phone/611168629",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "a97d40d2-fa4d-4bc8-b747-814636f6309f",
@@ -767,7 +767,7 @@
             "battery": "5200 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-a5-64-gb-3-gb-ram-black-mobile-phone/611315944",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "56a89bc8-b13e-4958-9a35-c08d844cb40d",
@@ -791,7 +791,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/realme-p1-speed-5g-256-gb-12-gb-ram-brushed-blue-mobile-phone/611174005",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "1aada53d-12fc-4495-b826-c1d4dccc5fe1",
@@ -816,7 +816,7 @@
             "battery": "4404 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/google-pixel-8a-128-gb-8-gb-ram-obsidian-mobile-phone/609833175",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "941fb9ab-0160-4926-ab3f-3e4005a7c786",
@@ -840,7 +840,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/nothing-cmf-phone-2-pro-5g-8gb-ram-128gb-storage-light-green-smartphone/611421075",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "8e0a48da-5cbd-4a2a-9f44-70e72da4479b",
@@ -864,7 +864,7 @@
             "battery": "5200 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-a5-3gb-ram-64gb-storage-jaisalmer-gold-smartphone/611449049",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "e09d9b8c-9356-465a-b60d-be5c496d78a1",
@@ -889,7 +889,7 @@
             "battery": "6000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oppo-k13x-5g-128-gb-4-gb-ram-sunset-peach-mobile-phone/611708076",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "4d81c026-4e4a-44ec-b121-60202ecd86d8",
@@ -913,7 +913,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oneplus-nord-4-5g-256-gb-8-gb-ram-oasis-green-mobile-phone/609541672",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "c250b527-a536-40da-81e3-2db29b3d9f5e",
@@ -938,7 +938,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oneplus-nord-4-5g-256-gb-8-gb-ram-obsidian-midnight-mobile-phone/609541671",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "3cbbf49e-96b3-459f-90e8-999c5a8464c9",
@@ -962,7 +962,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/infinix-note-50x-5g-6gb-ram-128gb-storage-sea-breeze-green-smartphone/611498686",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "f48f26f3-3e11-49c0-af93-6df3e6cd0397",
@@ -987,7 +987,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oneplus-nord-4-5g-256-gb-8-gb-ram-mercurial-silver-mobile-phone/609541673",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "daf36293-5298-4704-9eda-f18ef21bea08",
@@ -1011,7 +1011,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/infinix-note-50x-5g-6gb-ram-128gb-storage-enchanted-purple-smartphone/611498672",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "a92980be-be63-4f4b-87dd-21c0c5057f9d",
@@ -1035,7 +1035,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/realme-13-5g-8gb-ram-256gb-storage-speed-green-smartphone/611256614",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "0fdacd71-35aa-4173-a8f2-660148890c37",
@@ -1059,7 +1059,7 @@
             "battery": "5200 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-a5-3gb-ram-64gb-storage-just-black-smartphone/611449067",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "23675a1e-1efd-4f09-9945-772dc7674fa7",
@@ -1083,7 +1083,7 @@
             "battery": "5160 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/poco-c75-5g-4gb-ram-64gb-storage-aqua-bliss-smartphone/611611416",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "cdca49e9-4940-46b6-8e67-edf1252ec96e",
@@ -1108,7 +1108,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/poco-m4-5g-128-gb-6-gb-ram-power-black-mobile-phone/594282592",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "a606ad4a-9d6f-44fe-af38-b9d3a7b85cfa",
@@ -1132,7 +1132,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-y19e-4gb-ram-64gb-storage-titanium-silver-smartphone/611311846",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "388a1c12-d312-43a4-9073-087fa6f9be5e",
@@ -1157,7 +1157,7 @@
             "battery": "5160 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-14c-5g-128-gb-6-gb-ram-purple-mobile-phone/610852547",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "e6e7e79e-e8d5-4cf4-a1d4-9b9e4ef3cb4d",
@@ -1181,7 +1181,7 @@
             "battery": "5200 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-a5-3gb-ram-64gb-storage-pondicherry-blue-smartphone/611449055",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "fd4d015a-af85-4c64-89ae-4868ed9a81b9",
@@ -1205,7 +1205,7 @@
             "battery": "5200 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oppo-find-x8-256-gb-12-gb-ram-star-grey-mobile-phone/610682290",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "0f8661f2-c518-45ae-aad5-da7d1a93d3ec",
@@ -1229,7 +1229,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/nothing-cmf-phone-2-pro-5g-8gb-ram-256gb-storage-white-smartphone/611421096",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "fbf7b523-e480-4193-931f-eae85a76673c",
@@ -1253,7 +1253,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/infinix-note-50x-5g-6gb-ram-128gb-storage-titanium-gray-smartphone/611498607",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "9cbc7939-3639-4844-a8ce-34b0e4566e0f",
@@ -1278,7 +1278,7 @@
             "battery": "6000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-v50-5g-256-gb-8-gb-ram-rose-red-mobile-phone/611027261",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "74e59fa1-8d03-4f93-8621-a48c5027bb2d",
@@ -1302,7 +1302,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-y19e-4gb-ram-64gb-storage-majestic-green-smartphone/611311855",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "6156a7b6-61a5-41aa-9c72-1505a630ca7f",
@@ -1326,7 +1326,7 @@
             "battery": "5160 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-14c-5g-64-gb-4-gb-ram-purple-mobile-phone/610906071",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "15a4cb90-66f9-41aa-bffd-a3571d1a618a",
@@ -1350,7 +1350,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-a3x-3gb-ram-64gb-storage-midnight-black-smartphone/611613481",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "5013baec-66ea-4496-b13a-3f28e8ac5ab5",
@@ -1374,7 +1374,7 @@
             "battery": "5200 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/realme-13-pro-5g-8gb-ram-256gb-storage-monet-gold-smartphone/611254643",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "d8f517b6-354b-487e-a2ef-0b4f0290a3d7",
@@ -1398,7 +1398,7 @@
             "battery": "5200 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/poco-c71-4gb-ram-64gb-storage-cool-blue-smartphone/611308289",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "7701460c-0b9d-4d52-8741-9c8cb90d251a",
@@ -1422,7 +1422,7 @@
             "battery": "5200 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/realme-13-pro-5g-8gb-ram-256gb-storage-monet-purple-smartphone/611254650",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "b1a02475-c264-4456-aa06-04c775115de8",
@@ -1446,7 +1446,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/nothing-phone-3a-pro-8gb-ram-256gb-storage-black-smartphone/611181966",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "3ea228b1-27d6-4ab4-8654-224c61637853",
@@ -1470,7 +1470,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/nothing-phone-2a-8gb-ram-256gb-storage-blue-smartphone/611327583",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "36eb80ce-1f9e-44d5-b390-bfa372f7e55e",
@@ -1495,7 +1495,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-y19e-5g-64-gb-4-gb-ram-majestic-green-mobile-phone/611240259",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "ec72edb3-24f7-4704-8af8-7768a930d1ca",
@@ -1519,7 +1519,7 @@
             "battery": "5160 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-a4-5g-4gb-ram-64gb-storage-starry-black-smartphone/611644641",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "1acaeab6-5b7a-485d-97c9-54ef234e03a2",
@@ -1544,7 +1544,7 @@
             "battery": "5200 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/poco-c71-64-gb-4-gb-ram-gold-mobile-phone/611275155",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "e878a753-228a-4de0-bd19-af35dbce135d",
@@ -1569,7 +1569,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-t3-lite-5g-128-gb-6-gb-ram-green-mobile-phone/609484994",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "00e175dc-97c3-4c80-9482-0798a235c357",
@@ -1593,7 +1593,7 @@
             "battery": "7000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oppo-k13-5g-8gb-ram-128gb-storage-prism-black-smartphone/611449330",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "1594cdca-4811-4cd5-bd02-529c94c5a673",
@@ -1617,7 +1617,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/nothing-phone-3a-8gb-ram-128gb-storage-blue-smartphone/611327587",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "5191f8dc-abac-4e77-8a1b-b61f4bc99533",
@@ -1642,7 +1642,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/poco-m5-128-gb-6-gb-ram-icy-blue-mobile-phone/594861508",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "97350e75-ee97-497a-a03d-3a7eabccf5ae",
@@ -1666,7 +1666,7 @@
             "battery": "5200 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/poco-c71-4gb-ram-64gb-storage-desert-gold-smartphone/611308285",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "dd53a472-3557-43fd-b03f-c86e836fcc79",
@@ -1690,7 +1690,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/realme-13-5g-8gb-ram-128gb-storage-victory-gold-smartphone/611640947",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "a10b53c5-126d-42f2-b29c-ea200844d417",
@@ -1714,7 +1714,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/nothing-cmf-phone-2-pro-5g-8gb-ram-256gb-storage-black-smartphone/611421094",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "c8cb4b48-3b03-4173-98f9-3726ed0f972c",
@@ -1739,7 +1739,7 @@
             "battery": "5160 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-14c-5g-128-gb-4-gb-ram-black-mobile-phone/610852533",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "459bb84a-9da9-417b-af2e-369bd141f24b",
@@ -1763,7 +1763,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-t3-lite-5g-128-gb-6-gb-ram-black-mobile-phone/609484995",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "37fd7e19-821d-49d6-b9fe-005dee36937c",
@@ -1787,7 +1787,7 @@
             "battery": "5200 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/poco-c71-4gb-ram-64gb-storage-power-black-smartphone/611308270",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "8be5613a-387f-4df1-a2ea-52a41cacc779",
@@ -1812,7 +1812,7 @@
             "battery": "5200 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/poco-c71-64-gb-4-gb-ram-black-mobile-phone/611275100",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "92977596-a046-44ad-8ef7-55edcd323248",
@@ -1837,7 +1837,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-y29-5g-128-gb-6-gb-ram-dimond-black-mobile-phone/610820736",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "12312bdf-e4ca-4638-b2c4-97cff26002ba",
@@ -1861,7 +1861,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/motorola-moto-g85-5g-8gb-ram-128gb-storage-cobalt-blue-smartphone/611644615",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "e723e720-7206-42c3-818d-15313333ad0f",
@@ -1885,7 +1885,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/infinix-note-50s-5g-8gb-ram-128gb-storage-marine-drift-blue-smartphone/611499041",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "11a4b417-e9f2-4f6b-9b0c-47da11ffd8b2",
@@ -1909,7 +1909,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/infinix-note-50s-5g-8gb-ram-128gb-storage-titanium-grey-smartphone/611499017",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "3067db5d-b82b-4b0f-b4cf-59f8a189d0f7",
@@ -1933,7 +1933,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/motorola-edge-60-fusion-5g-8gb-ram-256gb-storage-pantone-amazonite-smartphone/611311857",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "b1e856b1-0562-4621-b1ef-3b74b03fc358",
@@ -1957,7 +1957,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/tecno-pova-6-neo-5g-6gb-ram-128gb-storage-azure-sky-smartphone/611311655",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "23ba777c-e105-48b9-a43e-1960b204c150",
@@ -1981,7 +1981,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-y19-5g-6gb-ram-128gb-storage-titanium-silver-smartphone/611640799",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "ceca2f28-0417-479f-b2df-0490f6dbe99e",
@@ -2006,7 +2006,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/samsung-galaxy-s25-ultra-5g-256-gb-12-gb-ram-titanium-grey-mobile-phone/610912886",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "2e72c92e-034b-4c0d-8089-7857c3645c30",
@@ -2030,7 +2030,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/motorola-moto-g45-5g-8gb-ram-128gb-brilliant-blue-smartphone/611601837",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "acb81c70-4b2a-4e7d-a503-6028f8f032f7",
@@ -2055,7 +2055,7 @@
             "battery": "5110 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-note-14-5g-128-gb-6-gb-ram-black-mobile-phone/610755620",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "aac159fd-915c-4a12-bbd0-07422863437a",
@@ -2080,7 +2080,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-t3-pro-5g-256-gb-8-gb-ram-sandstone-orange-mobile-phone/609998621",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "db94d7ce-39a0-4d4c-917a-4d39edd29406",
@@ -2104,7 +2104,7 @@
             "battery": "5160 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/poco-c75-5g-4gb-ram-64gb-storage-silver-stardust-smartphone/611611400",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "468ea06b-7335-44aa-99a1-14f547228bcc",
@@ -2128,7 +2128,7 @@
             "battery": ""
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-t3-lite-5g-6gb-ram-128gb-rom-majestic-black-smartphone/611673791",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "b9b1b94f-8897-41a3-b7ed-773f32279ad5",
@@ -2152,7 +2152,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/motorola-edge-50-fusion-8gb-ram-128gb-storage-marshmallow-blue-smartphone/611602273",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "e92e5ee0-a43b-49bf-8283-39f46cfde8af",
@@ -2176,7 +2176,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/motorola-edge-60-fusion-5g-8gb-ram-256gb-storage-pantone-slipstream-smartphone/611311845",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "70016399-d33b-4d0c-aeeb-4770b66138f9",
@@ -2200,7 +2200,7 @@
             "battery": "7000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oppo-k13-5g-8gb-ram-128gb-storage-icy-purple-smartphone/611449325",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "3a3f7373-6eda-4109-8f2a-cbbfdc24c722",
@@ -2225,7 +2225,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-y29-5g-128-gb-6-gb-ram-glacier-blue-mobile-phone/610820738",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "6ea40e82-f067-4b21-bb80-8cdc8546baf3",
@@ -2249,7 +2249,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/realme-c61-6gb-ram-128gb-storage-marble-black-smartphone/611254012",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "ab68e4d9-ed8c-4678-9381-429edd04f692",
@@ -2273,7 +2273,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/motorola-moto-g85-5g-8gb-ram-128gb-storage-olive-green-smartphone/611644617",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "04c68278-5a8f-4fec-8306-7d31deb0507d",
@@ -2297,7 +2297,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/nothing-phone-3a-8gb-ram-256gb-storage-black-smartphone/611327569",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "4f35c08a-b9d9-4062-a0b3-5c23cbcbd813",
@@ -2321,7 +2321,7 @@
             "battery": "5100 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oppo-k12x-5g-6gb-ram-128gb-storage-breeze-blue-smartphone/611552347",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "c63f4340-4241-4667-abdf-5fc8ac5cbe2e",
@@ -2345,7 +2345,7 @@
             "battery": "6500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oppo-f29-5g-8gb-ram-128gb-storage-deep-purple-smartphone/611276381",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "4539c874-aac8-4e7a-b4b9-c71c543ea092",
@@ -2370,7 +2370,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/poco-m4-pro-128-gb-8-gb-ram-poco-yellow-mobile-phone/593643453",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "ce305aef-64cf-44e6-bdd3-811bc302d906",
@@ -2394,7 +2394,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/motorola-edge-50-fusion-8gb-ram-128gb-storage-hot-pink-smartphone/611602276",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "3cab61a3-af5f-4e09-9dae-d34740318e36",
@@ -2418,7 +2418,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/samsung-s24-ultra-5g-256-gb-12-gb-ram-titanium-black-mobile-phone/607431928",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "65d84ae4-6940-4eff-94c2-02335e96d059",
@@ -2443,7 +2443,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-13-5g-8-gb-ram-128-gb-blue-mobile-phone/609501241",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "ab90f24f-8fee-47bb-ad94-f06c699bb3cd",
@@ -2467,7 +2467,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/motorola-moto-g85-5g-8gb-ram-128gb-storage-magenta-smartphone/611644622",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "3b963e12-8a4c-4207-bb61-80d070ab4c0c",
@@ -2491,7 +2491,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/motorola-edge-60-fusion-5g-8gb-ram-256gb-storage-pantone-zephyr-smartphone/611311869",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "89710f31-12bb-4985-b8dd-3fbfe1ce70bb",
@@ -2516,7 +2516,7 @@
             "battery": "5100 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oppo-a3-5g-128-gb-6-gb-ram-nebula-red-mobile-phone/609850418",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "ea7882fe-5112-43aa-97e7-60cf14cd132c",
@@ -2540,7 +2540,7 @@
             "battery": "5160 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-a4-5g-64-gb-4-gb-ram-purple-mobile-phone/610891109",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "ddcddc4f-c939-4817-bbf6-866a3dcaf217",
@@ -2564,7 +2564,7 @@
             "battery": "6500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-y39-5g-8gb-ram-128gb-storage-ocean-blue-smartphone/611449317",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "96b37d19-f336-40f1-9ddc-de60a4dd5d31",
@@ -2588,7 +2588,7 @@
             "battery": ""
         },
         "product_link": "https://www.jiomart.com/p/electronics/tecno-pop-9-5g-3gb-ram-64gb-storage-magic-skin-green-smartphone/611367790",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "bf46dd4a-669d-4875-99a3-7f22cab7ea92",
@@ -2612,7 +2612,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/samsung-galaxy-f16-5g-6gb-ram-128gb-storage-bling-black-smartphone/611644260",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "ad34aa3b-bd05-433c-9c89-3cb16be37ebb",
@@ -2636,7 +2636,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/samsung-galaxy-a16-5g-128-gb-6-gb-ram-black-mobile-phone/610732094",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "e24c4a9f-39e3-43a6-b44b-7c8ca8681d7d",
@@ -2660,7 +2660,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/realme-c63-4gb-ram-128gb-storage-jade-green-smartphone/611254154",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "08e6c7cc-98a1-4c20-b524-c65be0afcbae",
@@ -2684,7 +2684,7 @@
             "battery": "6000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/realme-14x-5g-6gb-ram-128gb-storage-golden-glow-smartphone/611254024",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "8e48f3f2-46d8-4418-a584-10925ffc3bb0",
@@ -2708,7 +2708,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/samsung-galaxy-a06-5g-4gb-ram-128gb-storage-light-gray-smartphone/611648097",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "fc4e031b-c648-4405-a15e-605fe790db7d",
@@ -2732,7 +2732,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/nothing-cmf-phone-2-pro-5g-8gb-ram-128gb-storage-orange-smartphone/611421082",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "49edfceb-6d9c-43ee-9fb6-1a99a7cfe329",
@@ -2756,7 +2756,7 @@
             "battery": "5160 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-14c-5g-4gb-ram-64gb-storage-starlight-blue-smartphone/611290852",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "38e1fdad-c961-4d37-97f3-4a41c6d5ea77",
@@ -2780,7 +2780,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/realme-13-5g-8gb-ram-256gb-storage-dark-purple-smartphone/611256609",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "23315121-0a6b-4344-99fd-5a90014ddcf4",
@@ -2804,7 +2804,7 @@
             "battery": "5500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-y19-5g-6gb-ram-128gb-storage-majestic-green-smartphone/611640788",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "5d5c482a-8cc8-440b-890c-53664d1fed18",
@@ -2828,7 +2828,7 @@
             "battery": "6500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/iqoo-z10x-5g-6gb-ram-128gb-storage-titanium-smartphone/611504350",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "ec3f6a35-72ab-45e8-a354-de8933f88570",
@@ -2852,7 +2852,7 @@
             "battery": "6500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oppo-f29-5g-8gb-ram-128gb-storage-glacier-blue-smartphone/611276390",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "8dc19e85-7172-4948-9ea1-5de0d19e103d",
@@ -2876,7 +2876,7 @@
             "battery": "5160 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/redmi-14c-5g-6gb-ram-128gb-storage-stargaze-black-smartphone/611290890",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "c79300be-8dce-48be-9349-3a5d0de1e0a8",
@@ -2900,7 +2900,7 @@
             "battery": "5100 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/oppo-k12x-5g-6gb-ram-128gb-storage-midnight-violet-smartphone/611552356",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "79e67286-d04a-405f-b4fb-89eb77283551",
@@ -2924,7 +2924,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/motorola-moto-g45-5g-4gb-ram-128gb-brilliant-green-smartphone/611601829",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "9d5f2456-8840-43a6-b23c-83dbfab7c54a",
@@ -2948,7 +2948,7 @@
             "battery": "7300 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-t4-5g-8gb-ram-128gb-storage-phantom-grey-smartphone/611648328",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "84dd1a26-cefe-45d2-840c-4ce56accfefa",
@@ -2973,7 +2973,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/poco-m5-128-gb-6-gb-ram-poco-yellow-mobile-phone/594861566",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "dc8bdefc-3a89-4476-a571-a64d039a94f0",
@@ -2997,7 +2997,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/nothing-phone-3a-8gb-ram-256gb-storage-white-smartphone/611327590",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "95ef3f1a-eb33-4181-a453-a8e2e3b8b377",
@@ -3021,7 +3021,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/infinix-note-40-pro-5g-8gb-ram-256gb-storage-racing-grey-smartphone/611192877",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "b56714d9-5656-4682-b228-eb1eed06d7e3",
@@ -3045,7 +3045,7 @@
             "battery": "6500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/vivo-y39-5g-8gb-ram-128gb-storage-lotus-purple-smartphone/611449327",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "ee98d217-5569-4c72-a745-13497fb810c2",
@@ -3069,7 +3069,7 @@
             "battery": "5000 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/motorola-moto-g45-5g-8gb-ram-128gb-pink-lavender-smartphone/611601812",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "c2160395-93cf-46b7-820b-1fed61645bbc",
@@ -3093,7 +3093,7 @@
             "battery": "6500 MAH"
         },
         "product_link": "https://www.jiomart.com/p/electronics/iqoo-z10x-5g-6gb-ram-128gb-storage-ultramarine-smartphone/611504342",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     
     {
@@ -3119,7 +3119,7 @@
             "battery": "5100mah"
         },
         "product_link": "https://www.vijaysales.com/p/P231849/231849/oppo-k12x-5g-dual-sim-smartphone-6gb-ram-128gb-storage-6-66-inch-120hz-display-mediatek-dimensity-6300-45w-supervooc-charging-breeze-blue",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "fcdffca0-d8c6-461e-b27f-79548c0aa0dd",
@@ -3144,7 +3144,7 @@
             "battery": "6000mah"
         },
         "product_link": "https://www.vijaysales.com/p/P240184/240187/realme-c73-5g-4gb-ram-128gb-storage-onyx-black",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "54f57471-7422-4aa5-96fb-13a7d961f2d7",
@@ -3168,7 +3168,7 @@
             "battery": "5000mah"
         },
         "product_link": "https://www.vijaysales.com/p/P239756/239766/cmf-by-nothing-phone-2-pro-8gb-ram-256gb-storage-white",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "1b77c66c-8456-4e05-bb2d-af96bf44ec8d",
@@ -3192,7 +3192,7 @@
             "battery": "5600mah"
         },
         "product_link": "https://www.vijaysales.com/p/P239351/239351/vivo-v50e-5g-8gb-ram-256gb-storage-pearl-white",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "a27643cb-5973-4a67-b34d-ffe7cf2f8c07",
@@ -3215,7 +3215,7 @@
             "battery": "5000mah"
         },
         "product_link": "https://www.vijaysales.com/p/230707/realme-c61-4g-4gb-ram-64gb-storage-safari-green",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "398c925d-c36a-42f1-bc8c-6b56a47df28b",
@@ -3237,7 +3237,7 @@
             "battery": "5200mah"
         },
         "product_link": "https://www.vijaysales.com/p/P239394/239397/redmi-a5-4g-4gb-ram-128gb-storage-jaisalmer-gold",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "c1de5ef9-c1e9-470d-9fff-1719c3086ca6",
@@ -3261,7 +3261,7 @@
             "battery": "5000mah"
         },
         "product_link": "https://www.vijaysales.com/p/P238975/238978/samsung-galaxy-a26-5g-8gb-ram-256gb-storage-awesome-mint",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "2459341f-2cdf-47f1-82f8-ecde04800d4c",
@@ -3286,7 +3286,7 @@
             "battery": "6500mah"
         },
         "product_link": "https://www.vijaysales.com/p/P238965/238965/vivo-y39-5g-8gb-ram-256gb-storage-ocean-blue",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "cf01fecd-a481-4489-9ffc-10674671498d",
@@ -3311,7 +3311,7 @@
             "battery": "5000mah"
         },
         "product_link": "https://www.vijaysales.com/p/P238027/238027/samsung-galaxy-a06-5g-4gb-ram-64gb-storage-black",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "ac864cfe-a1b0-4fd6-9c74-bc815ab3bc9e",
@@ -3336,7 +3336,7 @@
             "battery": "5000mah"
         },
         "product_link": "https://www.vijaysales.com/p/230882/redmi-13-5g-dual-sim-smartphone-8gb-ram-128gb-storage-6-79-inch-120hz-fhd-display-snapdragon-4-gen-2-5000-mah-battery-black-diamond",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "a34f45de-4e1e-4e34-b672-ac87edc26f9a",
@@ -3360,7 +3360,7 @@
             "battery": "5500mah"
         },
         "product_link": "https://www.vijaysales.com/p/229936/store-display-unit-realme-gt-6t-5g-12gb-ram-256gb-storage-fluid-silver",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "a70076f1-5716-4a42-aa0b-c9d9d1b8c3fe",
@@ -3385,7 +3385,7 @@
             "battery": "6000mah"
         },
         "product_link": "https://www.vijaysales.com/p/231435/samsung-galaxy-f15-5g-dual-sim-smartphone-6gb-ram-128gb-storage-6-45-inch-fhd-90hz-super-amoled-display-mediatek-dimensity-6100-black",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "6a04e79a-9c3d-4cca-8d78-d2e7020d7023",
@@ -3410,7 +3410,7 @@
             "battery": "6000mah"
         },
         "product_link": "https://www.vijaysales.com/p/P240184/240184/realme-c73-5g-4gb-ram-64gb-storage-onyx-black",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "26b7d764-6d87-4389-bcad-6d692c51d89e",
@@ -3435,7 +3435,7 @@
             "battery": "5100mah"
         },
         "product_link": "https://www.vijaysales.com/p/P231849/231850/oppo-k12x-5g-dual-sim-smartphone-6gb-ram-128gb-storage-6-66-inch-120hz-display-mediatek-dimensity-6300-45w-supervooc-charging-midnight-violet",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "bd79df62-6a43-412a-bed3-b843129273a8",
@@ -3458,7 +3458,7 @@
             "battery": "5500mah"
         },
         "product_link": "https://www.vijaysales.com/p/238943/vivo-y19e-4g-4gb-ram-64gb-storage-majestic-green",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "f5f40dc1-43c0-44e5-ab86-4e0b6a781f02",
@@ -3482,7 +3482,7 @@
             "battery": "6000mah"
         },
         "product_link": "https://www.vijaysales.com/p/P238775/238776/oppo-f29-pro-5g-12gb-ram-256gb-storage-marble-white",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "6e83c120-6685-4466-a425-c716de63aee2",
@@ -3507,7 +3507,7 @@
             "battery": "5500mah"
         },
         "product_link": "https://www.vijaysales.com/p/236571/vivo-y29-5g-4gb-ram-128gb-storage-glacier-blue",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "1d268e52-6f32-49a6-94f9-15a4890ed471",
@@ -3532,7 +3532,7 @@
             "battery": "6000mah"
         },
         "product_link": "https://www.vijaysales.com/p/P240009/240012/realme-p3x-5g-8gb-ram-128gb-storage-midnight-blue",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "db2702c1-4924-4051-bdcd-daa2db2972a5",
@@ -3556,7 +3556,7 @@
             "battery": "850mah"
         },
         "product_link": "https://www.vijaysales.com/p/P240146/240149/oneplus-13s-5g-12gb-ram-512gb-storage-green-silk",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "65e4e46f-dc0e-4d0b-9763-e10568dc3b01",
@@ -3581,7 +3581,7 @@
             "battery": "5500mah"
         },
         "product_link": "https://www.vijaysales.com/p/P227521/227523/oneplus-nord-series-nord-ce4-5g-dual-sim-smartphone-8gb-256gb-storage-6-7-inch-120hz-amoled-display-snapdragon-7-gen-3-100w-charge-celadon-marble",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "29423fcb-7276-4c86-bdf2-347cab59611f",
@@ -3606,7 +3606,7 @@
             "battery": "5000mah"
         },
         "product_link": "https://www.vijaysales.com/p/231633/store-display-unit-oppo-f27-5g-8gb-ram-128gb-storage-emerald-green",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "7dbcdd49-52ba-4e63-9660-aa200e686a2c",
@@ -3629,7 +3629,7 @@
             "battery": "5500mah"
         },
         "product_link": "https://www.vijaysales.com/p/238942/vivo-y19e-4g-4gb-ram-64gb-storage-titanium-silver",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "cc7bbf08-b1d3-42ff-84cb-79855f8c81ba",
@@ -3652,7 +3652,7 @@
             "battery": "5000mah"
         },
         "product_link": "https://www.vijaysales.com/p/230849/store-display-unit-vivo-y28e-5g-4gb-ram-64gb-storage-breeze-greene-green",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "3702e8ec-2dce-442e-af9e-8e23d554cd27",
@@ -3676,7 +3676,7 @@
             "battery": "5000mah"
         },
         "product_link": "https://www.vijaysales.com/p/P239756/239758/cmf-by-nothing-phone-2-pro-8gb-ram-128gb-storage-white",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "93871fd1-6ae6-4081-a6a8-864f68e69a33",
@@ -3701,7 +3701,7 @@
             "battery": "5500mah"
         },
         "product_link": "https://www.vijaysales.com/p/235702/redmi-note-14-pro-5g-8gb-ram-256gb-storage-titan-black",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "47d67032-6af2-41b8-b032-9856d790a8f8",
@@ -3726,7 +3726,7 @@
             "battery": "6000mah"
         },
         "product_link": "https://www.vijaysales.com/p/P240009/240014/realme-p3x-5g-8gb-ram-128gb-storage-stellar-pink",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "012f293c-aeaf-4096-aefc-6408a9d267ad",
@@ -3750,7 +3750,7 @@
             "battery": "6000mah"
         },
         "product_link": "https://www.vijaysales.com/p/P240896/240898/oppo-reno14-5g-8gb-ram-256gb-storage-pearl-white",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "d4d1dfd9-546e-44bb-b0ca-9a5cfa432c5e",
@@ -3774,7 +3774,7 @@
             "battery": "5100mah"
         },
         "product_link": "https://www.vijaysales.com/p/P238750/238751/google-pixel-9a-8gb-ram-256gb-storage-porcelain",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "b05409cb-2499-4a41-8c35-fd05a111fa35",
@@ -3798,7 +3798,7 @@
             "battery": "850mah"
         },
         "product_link": "https://www.vijaysales.com/p/P240146/240147/oneplus-13s-5g-12gb-ram-256gb-storage-green-silk",
-        "category": "smartphone"
+        "store": "jiomart"
     },
     {
         "product_id": "bb85f123-bb1f-4c46-954c-eb8d0e3fed55",
@@ -3823,6 +3823,6 @@
             "battery": "5000mah"
         },
         "product_link": "https://www.vijaysales.com/p/P238456/238456/nothing-phone-3a-5g-8gb-ram-128gb-storage-black",
-        "category": "smartphone"
+        "store": "jiomart"
     }
 ]
