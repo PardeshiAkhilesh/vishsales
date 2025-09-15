@@ -23,6 +23,17 @@
       padding: 0;
       box-sizing: border-box;
     }
+    .brand-logo {
+    font-size: 2.5rem;          /* Increase size of text */
+    color: #00bfff !important;  /* Light blue color */
+    text-decoration: none;      /* Remove underline */
+  }
+
+  .brand-logo i {
+    font-size: 2.8rem;          /* Make bolt icon a bit bigger */
+    color: #00bfff;             /* Light blue color */
+    margin-right: 8px;
+  }
 
     body {
       background: linear-gradient(135deg, var(--dark-bg), #1a1a2e, #16213e);
@@ -559,9 +570,16 @@
 </head>
 <body>
   <!-- Header Section -->
-  <div class="header-section">
-    <div class="container-fluid">
-      <h1 class="page-title">📱Premium Mobile Collection</h1>
+  <div class="header-section py-3">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+    <!-- Brand on the left -->
+    <a class="navbar-brand fw-bold brand-logo" href="index.html">
+      <i class="fas fa-bolt"></i> Vishal Sales
+    </a>
+
+    <!-- Title & breadcrumb in center -->
+    <div class="text-center flex-grow-1">
+      <h1 class="page-title mb-2">📱 Premium Mobile Collection</h1>
       <div class="breadcrumb-nav">
         <a href="index.html"><i class="fas fa-home"></i> Home</a>
         <span><i class="fas fa-chevron-right"></i></span>
@@ -569,6 +587,7 @@
       </div>
     </div>
   </div>
+</div>
 
   <div class="container-fluid">
     <div class="row">
