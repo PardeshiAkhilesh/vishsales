@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxe Fashion - Premium Clothing Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-gold: #d4af37;
+      --secondary-gold: #b8860b;
+      --dark-bg: #1a1a1a;
+      --card-bg: #2d2d2d;
+      --card-bg-hover: #3a3a3a;
+      --accent-rose: #c9a96e;
+      --text-light: #e8e8e8;
+      --elegant-black: #0f0f0f;
+      --warm-white: #faf8f3;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--dark-bg);
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--dark-bg);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-gold);
+      border-radius: 10px;
+    }
+
+    /* Navbar Enhancements */
+    .navbar {
+      background: linear-gradient(135deg, rgba(15, 15, 15, 0.95), rgba(26, 26, 26, 0.95)) !important;
+      backdrop-filter: blur(15px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 20px rgba(212, 175, 55, 0.1);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .navbar.scrolled {
+      background: rgba(15, 15, 15, 0.98) !important;
+      box-shadow: 0 2px 30px rgba(212, 175, 55, 0.3);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--primary-gold) !important;
+      font-size: 2rem;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+      letter-spacing: 1px;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-light) !important;
+      margin: 0 15px;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-gold) !important;
+      transform: translateY(-2px);
+    }
+
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(45deg, var(--primary-gold), var(--accent-rose));
+      transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section with Video Background */
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-top: 0;
+    }
+
+    .hero-video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+      z-index: -2;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(15, 15, 15, 0.8));
+      z-index: -1;
+    }
+
+    .hero-content {
+      text-align: center;
+      z-index: 10;
+      max-width: 900px;
+      padding: 0 20px;
+    }
+
+    .hero-title {
+      font-size: 4.5rem;
+      font-weight: 300;
+      background: linear-gradient(45deg, var(--primary-gold), var(--warm-white));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 25px;
+      animation: slideInDown 1s ease-out;
+      letter-spacing: 2px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.4rem;
+      color: var(--text-light);
+      margin-bottom: 35px;
+      animation: slideInUp 1s ease-out 0.3s both;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      gap: 25px;
+      animation: fadeIn 1s ease-out 0.6s both;
+    }
+
+    .btn-primary-custom {
+      background: linear-gradient(45deg, var(--primary-gold), var(--secondary-gold));
+      border: none;
+      padding: 18px 45px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-radius: 50px;
+      color: var(--elegant-black);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-primary-custom:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 12px 40px rgba(212, 175, 55, 0.5);
+      color: var(--elegant-black);
+    }
+
+    .btn-outline-custom {
+      border: 2px solid var(--primary-gold);
+      padding: 16px 43px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-radius: 50px;
+      color: var(--primary-gold);
+      background: transparent;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-outline-custom:hover {
+      background: var(--primary-gold);
+      color: var(--elegant-black);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(212, 175, 55, 0.3);
+    }
+
+    /* Features Section */
+    .features-section {
+      padding: 120px 0;
+      background: linear-gradient(135deg, rgba(45, 45, 45, 0.3), rgba(58, 58, 58, 0.2));
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--primary-gold);
+      margin-bottom: 80px;
+      position: relative;
+      letter-spacing: 2px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(45deg, var(--primary-gold), var(--accent-rose));
+    }
+
+    .feature-card {
+      background: linear-gradient(145deg, var(--card-bg), var(--card-bg-hover));
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 25px;
+      padding: 50px 35px;
+      text-align: center;
+      transition: all 0.4s ease;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .feature-card:hover::before {
+      left: 100%;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 50px rgba(212, 175, 55, 0.2);
+      border-color: var(--primary-gold);
+    }
+
+    .feature-icon {
+      font-size: 3.5rem;
+      color: var(--primary-gold);
+      margin-bottom: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.1);
+      text-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+    }
+
+    .feature-card h4 {
+      font-size: 1.5rem;
+      color: var(--primary-gold);
+      margin-bottom: 20px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .feature-card p {
+      color: var(--text-light);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    /* Products Section Styles */
+    .products-section {
+      padding: 120px 0;
+      background: var(--dark-bg);
+    }
+
+    .section-subtitle {
+      color: var(--text-light);
+      font-size: 1.3rem;
+      max-width: 900px;
+      margin: 0 auto;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .product-card {
+      background: linear-gradient(145deg, var(--card-bg), var(--card-bg-hover));
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 25px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      position: relative;
+      height: 100%;
+    }
+
+    .product-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 30px 60px rgba(212, 175, 55, 0.3);
+      border-color: var(--primary-gold);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: linear-gradient(45deg, var(--primary-gold), var(--secondary-gold));
+      color: var(--elegant-black);
+      padding: 8px 18px;
+      border-radius: 25px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      z-index: 10;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .product-badge.sale {
+      background: linear-gradient(45deg, #dc3545, #c82333);
+      color: white;
+    }
+
+    .product-badge.popular {
+      background: linear-gradient(45deg, var(--accent-rose), var(--primary-gold));
+      color: var(--elegant-black);
+    }
+
+    /* Image Slider Styles */
+    .image-slider {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+    }
+
+    .slider-container {
+      display: flex;
+      width: 400%;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
+      width: 25%;
+      height: 100%;
+      flex-shrink: 0;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover .slide img {
+      transform: scale(1.1);
+    }
+
+    .slider-controls {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(212, 175, 55, 0.9);
+      color: var(--elegant-black);
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0.8;
+    }
+
+    .slider-controls:hover {
+      background: var(--primary-gold);
+      opacity: 1;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .prev-btn {
+      left: 15px;
+    }
+
+    .next-btn {
+      right: 15px;
+    }
+
+    .slider-indicators {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .indicator.active {
+      background: var(--primary-gold);
+      transform: scale(1.2);
+    }
+
+    .card-body {
+      padding: 30px;
+      background: var(--card-bg);
+    }
+
+    .card-title {
+      color: var(--primary-gold);
+      font-weight: 600;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .rating {
+      margin-bottom: 18px;
+    }
+
+    .star {
+      color: var(--primary-gold);
+      font-size: 1rem;
+    }
+
+    .star.empty {
+      color: #555;
+    }
+
+    .card-description {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .price-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .card-price {
+      color: var(--primary-gold);
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .card-original-price {
+      color: #888;
+      text-decoration: line-through;
+      font-size: 1.1rem;
+    }
+
+    .btn-view-details {
+      background: linear-gradient(45deg, var(--primary-gold), var(--secondary-gold));
+      color: var(--elegant-black);
+      border: none;
+      padding: 14px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      width: 100%;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+    }
+
+    .btn-view-details:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+      color: var(--elegant-black);
+      text-decoration: none;
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, var(--elegant-black), var(--dark-bg));
+      padding: 60px 20px 30px;
+      text-align: center;
+      color: var(--text-light);
+      margin-top: 80px;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+      text-align: left;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+
+    .footer-section h5 {
+      color: var(--primary-gold);
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-section a {
+      color: var(--text-light);
+      display: block;
+      margin-bottom: 12px;
+      transition: all 0.3s ease;
+      padding: 5px 0;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      color: var(--primary-gold);
+      transform: translateX(5px);
+      text-decoration: none;
+    }
+
+    .social-icons {
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .social-icons i {
+      font-size: 1.6rem;
+      margin: 0 15px;
+      color: var(--text-light);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .social-icons i:hover {
+      color: var(--primary-gold);
+      transform: translateY(-3px) scale(1.2);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #aaa;
+    }
+
+    /* Animations */
+    @keyframes slideInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-60px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(60px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.8rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .section-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn-primary-custom,
+      .btn-outline-custom {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      .navbar-brand {
+        font-size: 1.6rem;
+      }
+
+      .navbar-nav .nav-link {
+        margin: 0 5px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <!-- Brand -->
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="fas fa-bolt"></i> Vishal's Fashion hub 
+      </a>
+      
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#collections"><i class="fas fa-tshirt"></i> Collections</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#women"><i class="fas fa-female"></i> Women</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#men"><i class="fas fa-male"></i> Men</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#accessories"><i class="fas fa-watch"></i> Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#account"><i class="fas fa-user"></i> Account</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <video class="hero-video-bg" autoplay muted loop>
+      <source src="https://cdn.pixabay.com/vimeo/706547436/tech-25186.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Luxury Fashion Redefined</h1>
+      <p class="hero-subtitle">Discover exclusive collections of premium clothing and accessories crafted for the sophisticated modern individual</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary-custom" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+          <i class="fas fa-shopping-bag"></i> Shop Collection
+        </button>
+        <button class="btn btn-outline-custom" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+          <i class="fas fa-info-circle"></i> Explore More
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <h2 class="section-title">Why Choose Luxe Fashion?</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="feature-card">
+            <i class="fas fa-crown feature-icon"></i>
+            <h4>Premium Quality</h4>
+            <p>Handpicked materials and meticulous craftsmanship ensure every piece meets the highest standards of luxury and durability.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="feature-card">
+            <i class="fas fa-shipping-fast feature-icon"></i>
+            <h4>Express Delivery</h4>
+            <p>Premium packaging and swift delivery within 24-48 hours to major cities. Your style, delivered with care.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="feature-card">
+            <i class="fas fa-concierge-bell feature-icon"></i>
+            <h4>Personal Styling</h4>
+            <p>Dedicated style consultants available 24/7 to help you curate the perfect wardrobe for every occasion.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <h2 class="section-title text-center mb-4">Featured Collections</h2>
+      <p class="section-subtitle text-center mb-5">
+        Explore our carefully curated selection of premium fashion pieces. From timeless classics to contemporary trends, 
+        each item is selected for its exceptional quality, unique design, and ability to elevate your personal style.
+      </p>
+      <div class="row">
+        <!-- Product 1 -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card product-card h-100 shadow-sm">
+            <div class="product-badge">New</div>
+            <div class="image-slider">
+              <div class="slider-container" data-slider="0">
+                <div class="slide">
+                  <img src="https://images.unsplash.com/photo-1581338834647-b0fb40704e21?w=400&h=320&fit=crop" alt="Designer Silk Dress - View 1">
+                </div>
+                <div class="slide">
+                  <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&h=320&fit=crop" alt="Designer Silk Dress - View 2">
+                </div>
+                <div class="slide">
+                  <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=320&fit=crop" alt="Designer Silk Dress - View 3">
+                </div>
+                <div class="slide">
+                  <img src="https://images.unsplash.com/photo-1566479179817-c0ae4b7b1c2e?w=400&h=320&fit=crop" alt="Designer Silk Dress - View 4">
+                </div>
+              </div>
+              <button class="slider-controls prev-btn" onclick="changeSlide(0, -1)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="slider-controls next-btn" onclick="changeSlide(0, 1)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+              <div class="slider-indicators">
+                <div class="indicator active" onclick="goToSlide(0, 0)"></div>
+                <div class="indicator" onclick="goToSlide(0, 1)"></div>
+                <div class="indicator" onclick="goToSlide(0, 2)"></div>
+                <div class="indicator" onclick="goToSlide(0, 3)"></div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Designer Silk Dress</h5>
+              <div class="rating">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <span class="ms-1 text-muted">(89)</span>
+              </div>
+              <p class="card-description">Elegant silk evening dress with intricate detailing, perfect for special occasions and formal events.</p>
+              <div class="price-section">
+                <span class="card-original-price">₹8,999</span>
+                <span class="card-price">₹6,499</span>
+              </div>
+              <a href="#" class="btn btn-view-details">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card product-card h-100 shadow-sm">
+            <div class="product-badge sale">Sale</div>
+            <div class="image-slider">
+              <div class="slider-container" data-slider="1">
+                <div class="slide">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=320&fit=crop" alt="Premium Leather Jacket - View 1">
+                </div>
+                <div class="slide">
+                  <img src="https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?w=400&h=320&fit=crop" alt="Premium Leather Jacket - View 2">
+                </div>
+                <div class="slide">
+                  <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=320&fit=crop" alt="Premium Leather Jacket - View 3">
+                </div>
+                <div class="slide">
+                  <img src="https://images.unsplash.com/photo-1520975954732-35dd22299614?w=400&h=320&fit=crop" alt="Premium Leather Jacket - View 4">
+                </div>
+              </div>
+              <button class="slider-controls prev-btn" onclick="changeSlide(1, -1)">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="slider-controls next-btn" onclick="changeSlide(1, 1)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+              <div class="slider-indicators">
+                <div class="indicator active" onclick="goToSlide(1, 0)"></div>
+                <div class="indicator" onclick="goToSlide(1, 1)">
