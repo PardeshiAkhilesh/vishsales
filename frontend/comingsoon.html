@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .coming-soon {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                  url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .coming-soon h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .countdown {
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+
+    .btn-custom {
+      background-color: #0d6efd;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+      background-color: #084298;
+    }
+  </style>
+</head>
+<body>
+  <div class="coming-soon">
+    <div class="container">
+      <h1><i class="fas fa-bolt"></i> We’re Launching Soon!</h1>
+      <p class="lead">Our amazing website is under construction. Stay tuned!</p>
+
+      <!-- Countdown -->
+      <div id="countdown" class="countdown"></div>
+
+      <!-- Notify Me Button -->
+      <button class="btn btn-custom mt-3">
+        <i class="fas fa-bell"></i> Notify Me
+      </button>
+    </div>
+  </div>
+
+  <!-- Countdown Script -->
+  <script>
+    // Set launch date (example: 31 Dec 2025)
+    const launchDate = new Date("Dec 31, 2025 23:59:59").getTime();
+
+    const x = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "We’re Live!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
