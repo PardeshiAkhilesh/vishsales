@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vishal Sales - Premium Laptop Collection</title>
+  <title>Vishal Sales - Premium Laptop Accessories Collection</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
@@ -84,8 +84,7 @@
     .search-section {
       background: linear-gradient(135deg, var(--card-bg), var(--card-bg-hover));
       padding: 25px; border-radius: 20px; margin-bottom: 30px;
-      border: 1px solid rgba(0,191,255,0.2);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border: 1px solid rgba(0,191,255,0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
     .search-input {
@@ -122,7 +121,7 @@
     .product-card:hover { transform: translateY(-10px) rotateX(2deg); box-shadow: 0 25px 50px rgba(0,191,255,0.2); border-color: var(--primary-blue); }
 
     .product-image-container {
-      position: relative; height: 280px;
+      position: relative; height: 300px;
       background: linear-gradient(135deg, #ffffff, #f8f9fa);
       display: flex; align-items: center; justify-content: center; padding: 20px; overflow: hidden;
     }
@@ -132,8 +131,8 @@
     .product-body { padding: 25px; position: relative; z-index: 2; }
     .product-title { color: var(--primary-blue); font-weight: 700; font-size: 1.2rem; margin-bottom: 15px; line-height: 1.4; }
     .product-meta { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
-    .product-brand { display: flex; align-items: center; gap: 8px; color: var(--text-light); font-size: 0.9rem; }
-    .product-brand i { color: var(--primary-blue); width: 16px; }
+    .product-brand, .product-store { display: flex; align-items: center; gap: 8px; color: var(--text-light); font-size: 0.9rem; }
+    .product-brand i, .product-store i { color: var(--primary-blue); width: 16px; }
     .product-pricing { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
     .discounted-price { color: var(--accent-gold); font-size: 1.4rem; font-weight: bold; }
     .original-price { color: #888; text-decoration: line-through; font-size: 1rem; }
@@ -284,11 +283,11 @@
         <i class="fas fa-bolt"></i> Vishal Sales
       </a>
       <div class="text-center flex-grow-1">
-        <h1 class="page-title mb-2">Premium Laptop Collection</h1>
+        <h1 class="page-title mb-2">Premium Laptop Accessories Collection</h1>
         <div class="breadcrumb-nav">
           <a href="index.html"><i class="fas fa-home"></i> Home</a>
           <span><i class="fas fa-chevron-right"></i></span>
-          <span>Laptops</span>
+          <span>Laptop Accessories</span>
         </div>
       </div>
     </div>
@@ -300,24 +299,40 @@
       <div class="col-lg-3 col-md-4">
         <div class="sidebar">
           <h5><i class="fas fa-list"></i> Categories</h5>
-          <form id="filter-form">
-            <div class="form-check"><input class="form-check-input" type="radio" name="category" value="mobile" onclick="location.href='mobile.html'"><label class="form-check-label">📱 Mobile</label></div>
-            <div class="form-check"><input class="form-check-input" type="radio" name="category" value="mobile_accessories" onclick="location.href='mobile_accessories.html'"><label class="form-check-label">🎧 Mobile Accessories</label></div>
-            <div class="form-check"><input class="form-check-input" type="radio" name="category" value="laptop" checked><label class="form-check-label">💻 Laptop</label></div>
-            <div class="form-check"><input class="form-check-input" type="radio" name="category" value="laptop_accessories" onclick="location.href='laptop_accessories.html'"><label class="form-check-label">⌨️ Laptop Accessories</label></div>
+          <form id="categoryForm">
+            <div class="form-check"><input class="form-check-input category-radio" type="radio" name="category" value="mobile" data-url="mobile.html"><label class="form-check-label">📱 Mobile</label></div>
+            <div class="form-check"><input class="form-check-input category-radio" type="radio" name="category" value="mobile_accessories" data-url="mobile_accessories.html"><label class="form-check-label">🎧 Mobile Accessories</label></div>
+            <div class="form-check"><input class="form-check-input category-radio" type="radio" name="category" value="laptop" data-url="laptop.html"><label class="form-check-label">💻 Laptop</label></div>
+            <div class="form-check"><input class="form-check-input category-radio" type="radio" name="category" value="laptop_accessories" data-url="laptop_accessories.html" checked><label class="form-check-label">⌨️ Laptop Accessories</label></div>
           </form>
 
           <h5><i class="fas fa-tags"></i> Brands</h5>
-          <div id="brand-filters"></div>
-
-          <div class="price-section">
-            <h5><i class="fas fa-rupee-sign"></i> Price Range</h5>
-            <input type="range" id="priceRangeMax" class="form-range" min="0" max="200000" step="5000" value="200000">
-            <div class="price-display">Up to: ₹<span id="priceMaxValue">2,00,000</span></div>
+          <div>
+            <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="dell" id="dell"><label class="form-check-label" for="dell">Dell</label></div>
+            <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="hp" id="hp"><label class="form-check-label" for="hp">HP</label></div>
+            <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="lenovo" id="lenovo"><label class="form-check-label" for="lenovo">Lenovo</label></div>
+            <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="apple" id="apple"><label class="form-check-label" for="apple">Apple</label></div>
+            <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="asus" id="asus"><label class="form-check-label" for="asus">ASUS</label></div>
+            <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="acer" id="acer"><label class="form-check-label" for="acer">Acer</label></div>
+            <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="msi" id="msi"><label class="form-check-label" for="msi">MSI</label></div>
+            <div class="form-check"><input class="form-check-input brand-filter" type="checkbox" value="razer" id="razer"><label class="form-check-label" for="razer">Razer</label></div>
           </div>
 
           <h5><i class="fas fa-store"></i> E-commerce</h5>
-          <div id="ecommerce-filters"></div>
+          <div>
+            <div class="form-check"><input class="form-check-input ecommerce-filter" type="checkbox" value="amazon" id="amazon"><label class="form-check-label" for="amazon">Amazon</label></div>
+            <div class="form-check"><input class="form-check-input ecommerce-filter" type="checkbox" value="flipkart" id="flipkart"><label class="form-check-label" for="flipkart">Flipkart</label></div>
+            <div class="form-check"><input class="form-check-input ecommerce-filter" type="checkbox" value="croma" id="croma"><label class="form-check-label" for="croma">Croma</label></div>
+            <div class="form-check"><input class="form-check-input ecommerce-filter" type="checkbox" value="vijaysales" id="vijaysales"><label class="form-check-label" for="vijaysales">Vijay Sales</label></div>
+            <div class="form-check"><input class="form-check-input ecommerce-filter" type="checkbox" value="jiomart" id="jiomart"><label class="form-check-label" for="jiomart">JioMart</label></div>
+            <div class="form-check"><input class="form-check-input ecommerce-filter" type="checkbox" value="snapdeal" id="snapdeal"><label class="form-check-label" for="snapdeal">Snapdeal</label></div>
+          </div>
+
+          <div class="price-section">
+            <h5><i class="fas fa-rupee-sign"></i> Price Range</h5>
+            <input type="range" class="form-range" min="500" max="50000" step="500" id="priceRange" value="50000">
+            <div class="price-display">Up to: ₹<span id="priceValue">50,000</span></div>
+          </div>
         </div>
       </div>
 
@@ -327,7 +342,7 @@
           <div class="search-section">
             <div class="input-group">
               <span class="input-group-text bg-transparent border-0"><i class="fas fa-search text-info"></i></span>
-              <input type="text" id="search-input" class="search-input form-control" placeholder="Search by laptop name or brand...">
+              <input type="text" id="searchInput" class="search-input form-control" placeholder="Search by product name or brand...">
             </div>
           </div>
 
@@ -336,8 +351,8 @@
             <div class="results-info" id="resultsInfo">Loading products...</div>
           </div>
 
-          <div class="row g-4" id="product-container">
-            <div class="loading col-12"><div class="spinner"></div>Loading premium laptop collection...</div>
+          <div class="row g-4" id="productsContainer">
+            <div class="loading col-12"><div class="spinner"></div>Loading premium laptop accessories collection...</div>
           </div>
 
           <div class="pagination-container" id="pagination" style="display: none;"></div>
@@ -386,16 +401,11 @@
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="text-center text-light py-4" style="background: var(--dark-bg); border-top: 2px solid rgba(0, 191, 255, 0.2); margin-top: 50px;">
-    &copy; 2025 Vishal Sales. All Rights Reserved.
-  </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
   // ===== CROSS-PAGE COMPARE MANAGER =====
-  const COMPARE_KEY = 'vishal_compare_list';
+  const COMPARE_KEY = 'vish_compare_list';
   const MAX_COMPARE = 5;
 
   const CompareManager = {
@@ -514,94 +524,97 @@
     });
   }
 
-  // ===== MAIN PAGE LOGIC =====
-  let allProducts = [];
-  let filteredProducts = [];
-  let currentPage = 1;
-  const productsPerPage = 12;
+  // ===== CATEGORY NAVIGATION =====
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.category-radio').forEach(radio => {
+      radio.addEventListener('change', function () {
+        const url = this.getAttribute('data-url');
+        if (url && url !== 'laptop_accessories.html') window.location.href = url;
+      });
+    });
+  });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const container = document.getElementById("product-container");
-    const searchInput = document.getElementById("search-input");
-    const brandFiltersDiv = document.getElementById("brand-filters");
-    const ecommerceFiltersDiv = document.getElementById("ecommerce-filters");
-    const paginationDiv = document.getElementById("pagination");
-    const priceRangeMax = document.getElementById("priceRangeMax");
-    const priceMaxValue = document.getElementById("priceMaxValue");
+  // ===== MAIN PAGE LOGIC =====
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("searchInput");
+    const brandFilters = document.querySelectorAll(".brand-filter");
+    const ecommerceFilters = document.querySelectorAll(".ecommerce-filter");
+    const priceRange = document.getElementById("priceRange");
+    const priceValue = document.getElementById("priceValue");
+    const productsContainer = document.getElementById("productsContainer");
     const resultsInfo = document.getElementById("resultsInfo");
+    const pagination = document.getElementById("pagination");
+
+    let productsData = [];
+    let filteredProducts = [];
+    let currentPage = 1;
+    const productsPerPage = 12;
 
     function formatPrice(value) {
       return new Intl.NumberFormat('en-IN').format(value);
     }
 
-    priceRangeMax.addEventListener("input", () => {
-      priceMaxValue.textContent = formatPrice(priceRangeMax.value);
-      debounceFilter();
+    priceRange.addEventListener("input", () => {
+      priceValue.textContent = formatPrice(priceRange.value);
     });
 
     fetch("laptop.json")
       .then(res => { if (!res.ok) throw new Error('Failed'); return res.json(); })
       .then(data => {
-        allProducts = data;
-        filteredProducts = [...allProducts];
-        renderFilters();
-        renderPage(currentPage);
+        productsData = data;
+        filteredProducts = [...productsData];
+        renderProducts(getPaginatedProducts(filteredProducts, currentPage));
         renderPagination();
         updateResultsInfo();
         refreshCompareBar();
       })
       .catch(() => {
-        container.innerHTML = `<div class="no-results col-12"><i class="fas fa-exclamation-triangle"></i><h3>Unable to Load Products</h3><p>Please check if the laptop.json file exists and try again.</p></div>`;
+        productsContainer.innerHTML = `<div class="no-results col-12"><i class="fas fa-exclamation-triangle"></i><h3>Unable to Load Products</h3><p>Please check if the laptop_accessories.json file exists and try again.</p></div>`;
       });
 
-    function getImageUrl(product) {
-      if (product.image && product.image.urls && Array.isArray(product.image.urls) && product.image.urls.length > 0)
-        return product.image.urls[0];
-      if (product.image && typeof product.image === 'string') return product.image;
-      if (product.image_url) return product.image_url;
-      return 'https://via.placeholder.com/300x250?text=No+Image';
-    }
-
-    function renderPage(page) {
-      container.innerHTML = "";
-      if (filteredProducts.length === 0) {
-        container.innerHTML = `<div class="no-results col-12"><i class="fas fa-search"></i><h3>No Products Found</h3><p>Try adjusting your search criteria or filters.</p></div>`;
+    function renderProducts(products) {
+      productsContainer.innerHTML = "";
+      if (products.length === 0) {
+        productsContainer.innerHTML = `<div class="no-results col-12"><i class="fas fa-search"></i><h3>No Products Found</h3><p>Try adjusting your search criteria or filters.</p></div>`;
         return;
       }
 
-      const start = (page - 1) * productsPerPage;
-      const pageProducts = filteredProducts.slice(start, start + productsPerPage);
-
-      pageProducts.forEach((product, index) => {
+      products.forEach((product, index) => {
         const card = document.createElement("div");
         card.classList.add("col-xl-4", "col-lg-6", "col-md-6", "mb-4");
         card.style.animationDelay = `${index * 0.1}s`;
 
-        const imageUrl = getImageUrl(product);
+        const imageUrl = (product.image_url && product.image_url.thumbnail)
+          ? product.image_url.thumbnail
+          : (product.image_url || 'https://via.placeholder.com/300x300?text=No+Image');
+
         const rating = product.rating || 'N/A';
-        const brand = product.brand || 'Unknown Brand';
         const productId = String(product.product_id || index);
         const isChecked = CompareManager.has(productId);
 
         card.innerHTML = `
           <div class="card product-card h-100">
             <div class="product-image-container">
-              <img src="${imageUrl}" class="product-image" alt="${product.title}" onerror="this.src='https://via.placeholder.com/300x250?text=No+Image'">
+              <img src="${imageUrl}" class="product-image" alt="${product.title}" onerror="this.src='https://via.placeholder.com/300x300?text=No+Image'">
             </div>
             <div class="product-body">
               <h5 class="product-title">${product.title}</h5>
               <div class="product-meta">
                 <div class="product-brand">
                   <i class="fas fa-tag"></i>
-                  <span><strong>Brand:</strong> ${brand}</span>
+                  <span><strong>Brand:</strong> ${product.brand}</span>
+                </div>
+                <div class="product-store">
+                  <i class="fas fa-store"></i>
+                  <span><strong>Store:</strong> ${product.Store || product.store || product.ecommerce || 'N/A'}</span>
                 </div>
               </div>
               <div class="product-pricing">
-                <span class="discounted-price">₹${formatPrice(product.discounted_price)}</span>
-                <span class="original-price">₹${formatPrice(product.price)}</span>
+                <span class="discounted-price">${product.discounted_price}</span>
+                <span class="original-price">${product.price}</span>
               </div>
               <div class="product-actions">
-                <a href="laptop_Product.html?id=${productId}" class="btn-view-details">
+                <a href="product.html?id=${productId}" class="btn-view-details">
                   <i class="fas fa-eye"></i> View Details
                 </a>
                 <div class="rating-badge"><i class="fas fa-star"></i> ${rating}</div>
@@ -623,16 +636,14 @@
               id: productId,
               name: product.title,
               image: imageUrl,
-              brand: brand,
-              store: (product.ecommerce && Array.isArray(product.ecommerce))
-                ? product.ecommerce.join(', ')
-                : (product.ecommerce || product.store || 'N/A'),
-              original_price: `₹${formatPrice(product.price)}`,
-              discounted_price: `₹${formatPrice(product.discounted_price)}`,
+              brand: product.brand,
+              store: product.Store || product.store || product.ecommerce || 'N/A',
+              original_price: product.price,
+              discounted_price: product.discounted_price,
               rating: product.rating || 'N/A',
               specifications: product.specifications || {},
               offers: product.offers || {},
-              category: 'Laptop'
+              category: 'Laptop Acc.'
             });
             if (!ok) {
               alert(`You can compare up to ${MAX_COMPARE} products only!`);
@@ -645,22 +656,59 @@
           refreshCompareBar();
         });
 
-        container.appendChild(card);
+        productsContainer.appendChild(card);
       });
     }
 
+    function filterProducts() {
+      const query = searchInput.value.toLowerCase();
+      const selectedBrands = Array.from(brandFilters).filter(b => b.checked).map(b => b.value.toLowerCase());
+      const selectedEcoms = Array.from(ecommerceFilters).filter(e => e.checked).map(e => e.value.toLowerCase());
+      const maxPrice = priceRange.value ? parseInt(priceRange.value) : Infinity;
+
+      filteredProducts = productsData.filter(product => {
+        const title = product.title.toLowerCase();
+        const brand = product.brand.toLowerCase();
+        const ecommerce = (product.ecommerce || product.Store || product.store || "").toLowerCase();
+        const price = parseInt(product.discounted_price.replace(/[^\d]/g, "")) || 0;
+
+        return (title.includes(query) || brand.includes(query)) &&
+               (selectedBrands.length === 0 || selectedBrands.includes(brand)) &&
+               (selectedEcoms.length === 0 || selectedEcoms.includes(ecommerce)) &&
+               price <= maxPrice;
+      });
+
+      currentPage = 1;
+      renderProducts(getPaginatedProducts(filteredProducts, currentPage));
+      renderPagination();
+      updateResultsInfo();
+    }
+
+    function getPaginatedProducts(products, page) {
+      const start = (page - 1) * productsPerPage;
+      return products.slice(start, start + productsPerPage);
+    }
+
+    function updateResultsInfo() {
+      const total = filteredProducts.length;
+      if (total === 0) { resultsInfo.textContent = "No products found"; return; }
+      const start = (currentPage - 1) * productsPerPage + 1;
+      const end = Math.min(currentPage * productsPerPage, total);
+      resultsInfo.textContent = `Showing ${start}-${end} of ${total} products`;
+    }
+
     function renderPagination() {
-      paginationDiv.innerHTML = "";
       const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-      if (totalPages <= 1) { paginationDiv.style.display = "none"; return; }
-      paginationDiv.style.display = "flex";
+      pagination.innerHTML = "";
+      if (totalPages <= 1) { pagination.style.display = "none"; return; }
+      pagination.style.display = "flex";
 
       const prevBtn = document.createElement("button");
       prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i> Previous';
       prevBtn.className = "pagination-btn";
       prevBtn.disabled = currentPage === 1;
       prevBtn.addEventListener("click", () => { currentPage--; reload(); });
-      paginationDiv.appendChild(prevBtn);
+      pagination.appendChild(prevBtn);
 
       const startPage = Math.max(1, currentPage - 2);
       const endPage = Math.min(totalPages, startPage + 4);
@@ -669,7 +717,7 @@
         btn.textContent = i;
         btn.className = "pagination-btn" + (i === currentPage ? " active" : "");
         btn.addEventListener("click", () => { currentPage = i; reload(); });
-        paginationDiv.appendChild(btn);
+        pagination.appendChild(btn);
       }
 
       const nextBtn = document.createElement("button");
@@ -677,70 +725,30 @@
       nextBtn.className = "pagination-btn";
       nextBtn.disabled = currentPage === totalPages;
       nextBtn.addEventListener("click", () => { currentPage++; reload(); });
-      paginationDiv.appendChild(nextBtn);
+      pagination.appendChild(nextBtn);
     }
 
     function reload() {
-      renderPage(currentPage);
+      renderProducts(getPaginatedProducts(filteredProducts, currentPage));
       renderPagination();
       updateResultsInfo();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function renderFilters() {
-      const brands = [...new Set(allProducts.map(p => p.brand).filter(Boolean))];
-      brandFiltersDiv.innerHTML = brands.map(brand => `
-        <div class="form-check">
-          <input class="form-check-input brand-filter" type="checkbox" value="${brand}" id="brand-${brand}">
-          <label class="form-check-label" for="brand-${brand}">${brand}</label>
-        </div>
-      `).join("");
+    searchInput.addEventListener("input", debounce(filterProducts, 300));
+    brandFilters.forEach(b => b.addEventListener("change", filterProducts));
+    ecommerceFilters.forEach(e => e.addEventListener("change", filterProducts));
+    priceRange.addEventListener("input", debounce(filterProducts, 300));
 
-      const ecommerce = ["Flipkart", "Amazon", "Croma", "Vijay Sales"];
-      ecommerceFiltersDiv.innerHTML = ecommerce.map(platform => `
-        <div class="form-check">
-          <input class="form-check-input ecommerce-filter" type="checkbox" value="${platform}" id="ecom-${platform}">
-          <label class="form-check-label" for="ecom-${platform}">${platform}</label>
-        </div>
-      `).join("");
-
-      document.querySelectorAll(".brand-filter, .ecommerce-filter").forEach(input => {
-        input.addEventListener("change", debounceFilter);
-      });
+    function debounce(func, wait) {
+      let timeout;
+      return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func(...args), wait);
+      };
     }
 
-    function updateResultsInfo() {
-      resultsInfo.textContent = `${filteredProducts.length} products found`;
-    }
-
-    function debounceFilter() {
-      clearTimeout(window.filterTimeout);
-      window.filterTimeout = setTimeout(applyFilters, 300);
-    }
-
-    function applyFilters() {
-      const searchTerm = searchInput.value.trim().toLowerCase();
-      const selectedBrands = Array.from(document.querySelectorAll(".brand-filter:checked")).map(el => el.value);
-      const selectedEcom = Array.from(document.querySelectorAll(".ecommerce-filter:checked")).map(el => el.value);
-      const maxPrice = parseInt(priceRangeMax.value);
-
-      filteredProducts = allProducts.filter(product => {
-        const titleMatch = product.title.toLowerCase().includes(searchTerm);
-        const brandMatch = selectedBrands.length ? selectedBrands.includes(product.brand) : true;
-        const ecomMatch = selectedEcom.length
-          ? (product.ecommerce && product.ecommerce.some(site => selectedEcom.includes(site)))
-          : true;
-        const priceMatch = product.discounted_price <= maxPrice;
-        return titleMatch && brandMatch && ecomMatch && priceMatch;
-      });
-
-      currentPage = 1;
-      renderPage(currentPage);
-      renderPagination();
-      updateResultsInfo();
-    }
-
-    searchInput.addEventListener("input", debounceFilter);
+    priceValue.textContent = formatPrice(priceRange.value);
   });
   </script>
 </body>
