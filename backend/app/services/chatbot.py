@@ -122,3 +122,27 @@ def chat_with_products(user_message: str, conversation_history: list = []) -> di
         "products": products,
         "recommendations": recommendations
     }
+
+
+def get_chatbot_response(message: str) -> str:
+    """Simple chatbot response without OpenAI dependency"""
+    message_lower = message.lower()
+    
+    # Simple keyword-based responses
+    if any(word in message_lower for word in ['hello', 'hi', 'hey']):
+        return "Hello! I'm here to help you find the perfect products. What are you looking for today?"
+    
+    if any(word in message_lower for word in ['laptop', 'computer']):
+        return "Great! We have a wide range of laptops. Are you looking for gaming laptops, business laptops, or something else?"
+    
+    if any(word in message_lower for word in ['mobile', 'phone', 'smartphone']):
+        return "We have excellent smartphones available! Are you interested in any particular brand like Samsung, Apple, or OnePlus?"
+    
+    if any(word in message_lower for word in ['price', 'cost', 'budget']):
+        return "I can help you find products within your budget. What's your price range?"
+    
+    if any(word in message_lower for word in ['thank', 'thanks']):
+        return "You're welcome! Feel free to ask if you need anything else."
+    
+    # Default response
+    return "I'm here to help you find products! You can ask me about laptops, mobiles, accessories, or any specific brand you're interested in."

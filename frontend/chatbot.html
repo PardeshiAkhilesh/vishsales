@@ -820,8 +820,29 @@
     </div>
   </div>
 
+  <script src="js/api.js"></script>
   <script>
-    // Create background particles
+    // Check if backend is running on page load
+    async function checkBackendStatus() {
+      try {
+        const response = await fetch('http://localhost:8000/ping');
+        if (response.ok) {
+          console.log('✅ Backend is connected');
+          document.querySelector('.header-subtitle').innerHTML = `
+            <div class="status-dot"></div>
+            Online • Ready to help
+          `;
+        }
+      } catch (err) {
+        console.error('❌ Backend is not running');
+        document.querySelector('.header-subtitle').innerHTML = `
+            <div class="status-dot" style="background: #ef4444;"></div>
+            Offline • Backend not connected
+          `;
+        addMessage('⚠️ Backend integration coming soon! Once the API is connected I\'ll answer your questions live. For now, please use the Contact page or call us directly.', 'bot');
+      }
+    }
+
     function createParticles() {
       const container = document.getElementById('bgAnimation');
       for (let i = 0; i < 20; i++) {
@@ -837,14 +858,12 @@
       }
     }
 
-    // Auto-resize textarea
     const input = document.getElementById('userInput');
     input.addEventListener('input', function() {
       this.style.height = 'auto';
       this.style.height = Math.min(this.scrollHeight, 120) + 'px';
     });
 
-    // Send message on Enter
     input.addEventListener('keydown', function(e) {
       if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
@@ -852,39 +871,35 @@
       }
     });
 
-    function sendMessage() {
+    async function sendMessage() {
       const msg = input.value.trim();
-      if (msg) {
-        addMessage(msg, 'user');
-        input.value = '';
-        input.style.height = 'auto';
-        
-        // Show typing indicator
-        showTypingIndicator();
-        
-        // Simulate bot response
-        setTimeout(() => {
-          hideTypingIndicator();
-          addBotResponse(msg);
-        }, 1500 + Math.random() * 1000);
+      if (!msg) return;
+      
+      addMessage(msg, 'user');
+      input.value = '';
+      input.style.height = 'auto';
+      showTypingIndicator();
+      
+      try {
+        const data = await chatbotAPI.send(msg);
+        hideTypingIndicator();
+        addMessage(data.reply || 'I am here to help!', 'bot');
+      } catch (err) {
+        console.error('Chatbot error:', err);
+        hideTypingIndicator();
+        addMessage('⚠️ Backend integration coming soon! Once the API is connected I\'ll answer your questions live. For now, please use the Contact page or call us directly.', 'bot');
       }
     }
 
     function sendQuickMessage(message) {
-      addMessage(message, 'user');
-      showTypingIndicator();
-      
-      setTimeout(() => {
-        hideTypingIndicator();
-        addBotResponse(message);
-      }, 1200);
+      input.value = message;
+      sendMessage();
     }
 
     function addMessage(message, sender) {
       const chatBody = document.getElementById('chatBody');
       const messageDiv = document.createElement('div');
       messageDiv.className = `message ${sender}`;
-      
       const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
       
       if (sender === 'user') {
@@ -904,7 +919,6 @@
           </div>
         `;
       }
-      
       chatBody.appendChild(messageDiv);
       scrollToBottom();
     }
@@ -922,33 +936,13 @@
           <div class="typing-dot"></div>
         </div>
       `;
-      
       chatBody.appendChild(typingDiv);
       scrollToBottom();
     }
 
     function hideTypingIndicator() {
       const indicator = document.getElementById('typingIndicator');
-      if (indicator) {
-        indicator.remove();
-      }
-    }
-
-    function addBotResponse(userMessage) {
-      let response = "Thanks for your message! I'm here to help you with any questions.";
-      
-      const lowerMsg = userMessage.toLowerCase();
-      if (lowerMsg.includes('order')) {
-        response = "I can help you with order-related questions. Could you please provide your order ID or tell me what specific information you need?";
-      } else if (lowerMsg.includes('support') || lowerMsg.includes('help')) {
-        response = "I'm here to provide technical support. What issue are you experiencing? I'll do my best to assist you.";
-      } else if (lowerMsg.includes('account')) {
-        response = "For account-related inquiries, I can help you with profile updates, password resets, and general account information. What do you need help with?";
-      } else if (lowerMsg.includes('hello') || lowerMsg.includes('hi')) {
-        response = "Hello! It's great to meet you. I'm your AI assistant and I'm here to help with any questions or tasks you might have. What can I do for you today?";
-      }
-      
-      addMessage(response, 'bot');
+      if (indicator) indicator.remove();
     }
 
     function scrollToBottom() {
@@ -956,31 +950,12 @@
       chatBody.scrollTop = chatBody.scrollHeight;
     }
 
-    function goBackHome() {
-      // Add smooth transition effect
-      const container = document.querySelector('.chat-container');
-      container.style.transform = 'translateX(-20px)';
-      container.style.opacity = '0.8';
-      
-      setTimeout(() => {
-        container.style.transform = 'translateX(0)';
-        container.style.opacity = '1';
-      }, 200);
-      
-      // You can customize this to navigate to your actual home page
-      // window.location.href = '/'; // Uncomment to actually navigate
-      
-      // For demo purposes, show a message
-      addMessage("🏠 Navigating back to home page...", 'bot');
-    }
-
     function toggleMenu() {
-      // Add menu functionality here
-      addMessage("⚙️ Menu options: Settings, History, Help, Logout", 'bot');
+      addMessage('⚙️ Menu options: Settings, History, Help, Logout', 'bot');
     }
 
-    // Initialize
     createParticles();
+    checkBackendStatus();
   </script>
 </body>
 </html>

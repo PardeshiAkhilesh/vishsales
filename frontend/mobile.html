@@ -587,18 +587,57 @@
       priceValue.textContent = formatPrice(priceRange.value);
     });
 
-    fetch("mobile.json")
+    fetch("http://localhost:8000/api/productlisting?category=smartphone&minPrice=0&page=1&limit=100&sortby=-1")
       .then(res => { if (!res.ok) throw new Error('Failed'); return res.json(); })
       .then(data => {
-        productsData = data;
+        // Transform backend data to match frontend format
+        productsData = data.products.map(p => {
+          // Get the best vendor (lowest price)
+          let bestVendor = null;
+          let lowestPrice = Infinity;
+          let vendorName = 'N/A';
+          
+          if (p.vendors) {
+            Object.entries(p.vendors).forEach(([name, details]) => {
+              if (details.discountprice < lowestPrice) {
+                lowestPrice = details.discountprice;
+                bestVendor = details;
+                vendorName = name;
+              }
+            });
+          }
+          
+          return {
+            product_id: p._id || p.id,
+            id: p._id || p.id,
+            title: p.title || 'Unknown Product',
+            brand: p.brand || 'Unknown',
+            store: vendorName,
+            ecommerce: vendorName,
+            price: bestVendor ? `₹${formatPrice(bestVendor.price)}` : 'N/A',
+            discounted_price: bestVendor ? `₹${formatPrice(bestVendor.discountprice)}` : 'N/A',
+            rating: bestVendor?.rating || 'N/A',
+            image_url: p.image?.thumbnail || p.image?.urls?.[0] || 'https://via.placeholder.com/300x300?text=No+Image',
+            specifications: {
+              'RAM': p.features?.details?.storage?.ram || 'N/A',
+              'Storage': p.features?.details?.storage?.rom || 'N/A',
+              'Processor': p.features?.details?.performance?.processor || 'N/A',
+              'Display': p.features?.details?.display?.screen_size || 'N/A',
+              'OS': p.features?.details?.performance?.operating_system || 'N/A'
+            },
+            offers: bestVendor?.offers || [],
+            vendors: p.vendors
+          };
+        });
         filteredProducts = [...productsData];
         renderProducts(getPaginatedProducts(filteredProducts, currentPage));
         renderPagination();
         updateResultsInfo();
         refreshCompareBar();
       })
-      .catch(() => {
-        productsContainer.innerHTML = `<div class="no-results col-12"><i class="fas fa-exclamation-triangle"></i><h3>Unable to Load Products</h3><p>Please check if the mobile.json file exists.</p></div>`;
+      .catch((err) => {
+        console.error('Error loading products:', err);
+        productsContainer.innerHTML = `<div class="no-results col-12"><i class="fas fa-exclamation-triangle"></i><h3>Unable to Load Products</h3><p>Please make sure the backend server is running on port 8000.</p><p class="text-muted">Error: ${err.message}</p></div>`;
       });
 
     function renderProducts(products) {

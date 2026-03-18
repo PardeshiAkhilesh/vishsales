@@ -539,10 +539,53 @@
       debounceFilter();
     });
 
-    fetch("laptop.json")
+    fetch("http://localhost:8000/api/productlisting?category=laptop&minPrice=0&page=1&limit=100&sortby=-1")
       .then(res => { if (!res.ok) throw new Error('Failed'); return res.json(); })
       .then(data => {
-        allProducts = data;
+        // Transform backend data to match frontend format
+        allProducts = data.products.map(p => {
+          // Get the best vendor (lowest price)
+          let bestVendor = null;
+          let lowestPrice = Infinity;
+          let vendorName = 'N/A';
+          let allVendors = [];
+          
+          if (p.vendors) {
+            Object.entries(p.vendors).forEach(([name, details]) => {
+              allVendors.push(name);
+              if (details.discountprice < lowestPrice) {
+                lowestPrice = details.discountprice;
+                bestVendor = details;
+                vendorName = name;
+              }
+            });
+          }
+          
+          return {
+            product_id: p._id || p.id,
+            title: p.title || 'Unknown Product',
+            brand: p.brand || 'Unknown',
+            price: bestVendor ? bestVendor.price : 0,
+            discounted_price: bestVendor ? bestVendor.discountprice : 0,
+            rating: bestVendor?.rating || 'N/A',
+            ecommerce: allVendors,
+            store: vendorName,
+            image: {
+              urls: p.image?.urls || [p.image?.thumbnail] || []
+            },
+            image_url: p.image?.thumbnail || p.image?.urls?.[0] || 'https://via.placeholder.com/300x250?text=No+Image',
+            specifications: {
+              'RAM': p.features?.details?.storage?.ram || 'N/A',
+              'Storage': p.features?.details?.storage?.rom || 'N/A',
+              'Processor': p.features?.details?.performance?.processor || 'N/A',
+              'Display': p.features?.details?.display?.screen_size || 'N/A',
+              'OS': p.features?.details?.performance?.operating_system || 'N/A',
+              'Weight': p.features?.details?.design?.weight || 'N/A'
+            },
+            offers: bestVendor?.offers || [],
+            vendors: p.vendors
+          };
+        });
         filteredProducts = [...allProducts];
         renderFilters();
         renderPage(currentPage);
@@ -550,8 +593,9 @@
         updateResultsInfo();
         refreshCompareBar();
       })
-      .catch(() => {
-        container.innerHTML = `<div class="no-results col-12"><i class="fas fa-exclamation-triangle"></i><h3>Unable to Load Products</h3><p>Please check if the laptop.json file exists and try again.</p></div>`;
+      .catch((err) => {
+        console.error('Error loading products:', err);
+        container.innerHTML = `<div class="no-results col-12"><i class="fas fa-exclamation-triangle"></i><h3>Unable to Load Products</h3><p>Please make sure the backend server is running on port 8000.</p><p class="text-muted">Error: ${err.message}</p></div>`;
       });
 
     function getImageUrl(product) {

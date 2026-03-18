@@ -1003,8 +1003,19 @@
     //   return data.reply;
 
     async function sendToBackend(userMessage) {
-      // Remove this throw once your backend is connected
-      throw new Error('BACKEND_NOT_CONNECTED');
+      try {
+        const res = await fetch('http://localhost:8000/api/chatbot', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: userMessage })
+        });
+        if (!res.ok) throw new Error('Server error ' + res.status);
+        const data = await res.json();
+        return data.reply || 'I am here to help!';
+      } catch (err) {
+        console.error('Chatbot API error:', err);
+        throw new Error('BACKEND_NOT_CONNECTED');
+      }
     }
 
     // ── Main send flow ───────────────────────────────────────────

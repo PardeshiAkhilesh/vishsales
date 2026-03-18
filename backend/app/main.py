@@ -1,7 +1,9 @@
 from fastapi import FastAPI, Depends
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from services.routes import router as chat_router
 from fastapi.middleware.cors import CORSMiddleware
-from database.mongo import client as mongo_client, close_client
+from database.mongo import client as mongo_client, close_client, connect_db
 from dotenv import load_dotenv
 import os
 
@@ -10,9 +12,9 @@ load_dotenv()
 origins = ["*"]
 
 app = FastAPI(
-    title="Ecommerce api",
-    description="Ecommerce api backend, with auto docs for the API and everything",
-    version="0.0.0"
+    title="Vishal Sales API",
+    description="E-commerce API backend with auto docs",
+    version="1.0.0"
 )
 
 app.add_middleware(
@@ -27,7 +29,11 @@ app.add_middleware(
 async def ping():
     return {"res": True}
 
-app.include_router(chat_router)
+app.include_router(chat_router, prefix="/api")
+
+@app.on_event("startup")
+async def startup():
+    await connect_db()
 
 @app.on_event("shutdown")
 def shutdown_db():

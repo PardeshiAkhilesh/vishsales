@@ -587,7 +587,6 @@
   </div>
 
   <script>
-    /* ── Password toggle ── */
     function togglePassword() {
       const inp = document.getElementById('password');
       const icon = document.getElementById('toggleIcon');
@@ -596,41 +595,46 @@
       icon.className = isHidden ? 'fas fa-eye-slash' : 'fas fa-eye';
     }
 
-    /* ── Forgot password ── */
     function showForgotPassword() {
       alert('Redirecting to password reset page...');
     }
 
-    /* ── Submit loading ── */
-    document.getElementById('loginForm').addEventListener('submit', function (e) {
+    document.querySelectorAll('.field-input').forEach(inp => {
+      inp.addEventListener('input', function () {
+        this.style.borderColor = this.value ? 'rgba(0,191,255,0.45)' : 'rgba(0,191,255,0.12)';
+      });
+    });
+  </script>
+  <script src="js/api.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async function (e) {
       e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
       const btn = document.getElementById('submitBtn');
       const label = btn.querySelector('.btn-label');
 
       btn.classList.add('loading');
       btn.disabled = true;
 
-      setTimeout(() => {
+      try {
+        const data = await authAPI.login(email, password);
+        if (data.token) {
+          localStorage.setItem('vishal_token', data.token);
+          localStorage.setItem('vishal_user', JSON.stringify(data.user));
+          btn.classList.remove('loading');
+          btn.classList.add('success-state');
+          label.innerHTML = '<i class="fas fa-check"></i> &nbsp;Welcome Back!';
+          label.style.opacity = '1';
+          setTimeout(() => { window.location.href = 'index.html'; }, 1000);
+        } else {
+          throw new Error(data.detail || 'Login failed');
+        }
+      } catch (err) {
         btn.classList.remove('loading');
-        btn.classList.add('success-state');
-        label.innerHTML = '<i class="fas fa-check"></i> &nbsp;Welcome Back!';
-        label.style.opacity = '1';
-
-        setTimeout(() => {
-          btn.classList.remove('success-state');
-          label.innerHTML = 'Sign In &nbsp;<i class="fas fa-arrow-right"></i>';
-          btn.disabled = false;
-        }, 2500);
-      }, 2000);
-    });
-
-    /* ── Input live border feedback ── */
-    document.querySelectorAll('.field-input').forEach(inp => {
-      inp.addEventListener('input', function () {
-        this.style.borderColor = this.value
-          ? 'rgba(0,191,255,0.45)'
-          : 'rgba(0,191,255,0.12)';
-      });
+        btn.disabled = false;
+        alert(err.message || 'Connection error. Make sure the server is running.');
+      }
     });
   </script>
 </body>

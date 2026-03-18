@@ -640,10 +640,19 @@
     </div>
   </div>
 
+  <script src="js/api.js"></script>
   <script>
-    // Form submission with loading state
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // Remove in production
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const name = `${firstName} ${lastName}`;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const subject = document.getElementById('subject').value;
+      const messageText = document.getElementById('message').value;
+      const message = `${subject}: ${messageText}`;
       
       const submitBtn = document.getElementById('submitBtn');
       const btnText = submitBtn.querySelector('.btn-text');
@@ -651,21 +660,24 @@
       submitBtn.classList.add('loading');
       submitBtn.disabled = true;
       
-      // Simulate API call (remove this in production)
-      setTimeout(() => {
+      try {
+        const data = await contactAPI.submit(name, email, message, phone);
         submitBtn.classList.remove('loading');
         submitBtn.classList.add('success-state', 'success-animation');
         btnText.textContent = 'Message Sent!';
         btnText.style.opacity = '1';
         
-        // Reset form after success
         setTimeout(() => {
           document.getElementById('contactForm').reset();
           submitBtn.classList.remove('success-state', 'success-animation');
           btnText.textContent = 'Send Message';
           submitBtn.disabled = false;
         }, 2000);
-      }, 2000);
+      } catch (err) {
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
+        alert('Failed to send message. Please try again.');
+      }
     });
 
     // Enhanced form interactions
