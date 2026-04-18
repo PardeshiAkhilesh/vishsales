@@ -280,10 +280,10 @@
     .product-badge { position:absolute; top:15px; left:15px; background:linear-gradient(45deg,var(--primary-blue),var(--secondary-blue)); color:white; padding:8px 15px; border-radius:20px; font-size:0.8rem; font-weight:bold; z-index:10; text-transform:uppercase; }
     .product-badge.sale { background:linear-gradient(45deg,#ff4d4d,#ff1a1a); }
     .product-badge.popular { background:linear-gradient(45deg,var(--accent-gold),#ff8c00); color:#000; }
-    .image-slider { position:relative; width:100%; height:250px; overflow:hidden; }
-    .slider-container { display:flex; width:400%; height:100%; transition:transform 0.5s ease; }
-    .slide { width:25%; height:100%; flex-shrink:0; }
-    .slide img { width:100%; height:100%; object-fit:cover; }
+    .image-slider { position:relative; width:100%; height:340px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+    .slider-container { display:flex; width:100%; height:100%; transition:transform 0.5s ease; }
+    .slide { width:100%; height:100%; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+    .slide img { width:100%; height:100%; object-fit:contain; display:block; margin:0; }
     .slider-controls { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,191,255,0.8); color:white; border:none; width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.3s ease; opacity:0.8; }
     .slider-controls:hover { background:var(--primary-blue); opacity:1; transform:translateY(-50%) scale(1.1); }
     .prev-btn{left:10px} .next-btn{right:10px}
@@ -617,114 +617,112 @@
     <div class="container">
       <h2 class="section-title text-center mb-4">Featured Products</h2>
       <p class="section-subtitle text-center mb-5">Explore our wide range of products carefully selected to meet your needs. From the latest arrivals to our best-selling items, we bring you quality, affordability, and style all in one place.</p>
-      <div class="row">
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="card product-card h-100 shadow-sm">
-            <div class="product-badge">New</div>
-            <div class="image-slider">
-              <div class="slider-container" data-slider="0">
-                <div class="slide"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop" alt="Headphones 1"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop" alt="Headphones 2"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&h=300&fit=crop" alt="Headphones 3"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=400&h=300&fit=crop" alt="Headphones 4"></div>
-              </div>
-              <button class="slider-controls prev-btn" onclick="changeSlide(0,-1)"><i class="fas fa-chevron-left"></i></button>
-              <button class="slider-controls next-btn" onclick="changeSlide(0,1)"><i class="fas fa-chevron-right"></i></button>
-              <div class="slider-indicators">
-                <div class="indicator active" onclick="goToSlide(0,0)"></div><div class="indicator" onclick="goToSlide(0,1)"></div>
-                <div class="indicator" onclick="goToSlide(0,2)"></div><div class="indicator" onclick="goToSlide(0,3)"></div>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Premium Wireless Headphones</h5>
-              <div class="rating"><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><span class="ms-1 text-muted">(124)</span></div>
-              <p class="card-description">High-quality noise-canceling headphones with premium sound quality and long battery life.</p>
-              <div class="price-section"><span class="card-original-price">₹2,999</span><span class="card-price">₹1,499</span></div>
-              <a href="#" class="btn btn-view-details">View Details</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="card product-card h-100 shadow-sm">
-            <div class="product-badge sale">Sale</div>
-            <div class="image-slider">
-              <div class="slider-container" data-slider="1">
-                <div class="slide"><img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400&h=300&fit=crop" alt="Watch 1"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop" alt="Watch 2"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=400&h=300&fit=crop" alt="Watch 3"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=400&h=300&fit=crop" alt="Watch 4"></div>
-              </div>
-              <button class="slider-controls prev-btn" onclick="changeSlide(1,-1)"><i class="fas fa-chevron-left"></i></button>
-              <button class="slider-controls next-btn" onclick="changeSlide(1,1)"><i class="fas fa-chevron-right"></i></button>
-              <div class="slider-indicators">
-                <div class="indicator active" onclick="goToSlide(1,0)"></div><div class="indicator" onclick="goToSlide(1,1)"></div>
-                <div class="indicator" onclick="goToSlide(1,2)"></div><div class="indicator" onclick="goToSlide(1,3)"></div>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Smart Fitness Watch</h5>
-              <div class="rating"><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star empty"></i><span class="ms-1 text-muted">(89)</span></div>
-              <p class="card-description">Advanced fitness tracking with heart rate monitor, GPS, and waterproof design.</p>
-              <div class="price-section"><span class="card-original-price">₹4,999</span><span class="card-price">₹2,999</span></div>
-              <a href="#" class="btn btn-view-details">View Details</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="card product-card h-100 shadow-sm">
-            <div class="product-badge popular">Popular</div>
-            <div class="image-slider">
-              <div class="slider-container" data-slider="2">
-                <div class="slide"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=300&fit=crop" alt="Speaker 1"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=300&fit=crop" alt="Speaker 2"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1589492477829-5e65395b66cc?w=400&h=300&fit=crop" alt="Speaker 3"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?w=400&h=300&fit=crop" alt="Speaker 4"></div>
-              </div>
-              <button class="slider-controls prev-btn" onclick="changeSlide(2,-1)"><i class="fas fa-chevron-left"></i></button>
-              <button class="slider-controls next-btn" onclick="changeSlide(2,1)"><i class="fas fa-chevron-right"></i></button>
-              <div class="slider-indicators">
-                <div class="indicator active" onclick="goToSlide(2,0)"></div><div class="indicator" onclick="goToSlide(2,1)"></div>
-                <div class="indicator" onclick="goToSlide(2,2)"></div><div class="indicator" onclick="goToSlide(2,3)"></div>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Portable Bluetooth Speaker</h5>
-              <div class="rating"><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star empty"></i><span class="ms-1 text-muted">(156)</span></div>
-              <p class="card-description">Compact wireless speaker with deep bass, crystal clear sound, and 12-hour battery life.</p>
-              <div class="price-section"><span class="card-original-price">₹1,499</span><span class="card-price">₹999</span></div>
-              <a href="#" class="btn btn-view-details">View Details</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="card product-card h-100 shadow-sm">
-            <div class="product-badge sale">Sale</div>
-            <div class="image-slider">
-              <div class="slider-container" data-slider="3">
-                <div class="slide"><img src="https://images.unsplash.com/photo-1542393545-10f5cde2c810?w=400&h=300&fit=crop" alt="Mouse 1"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&h=300&fit=crop" alt="Mouse 2"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=400&h=300&fit=crop" alt="Mouse 3"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&h=300&fit=crop" alt="Mouse 4"></div>
-              </div>
-              <button class="slider-controls prev-btn" onclick="changeSlide(3,-1)"><i class="fas fa-chevron-left"></i></button>
-              <button class="slider-controls next-btn" onclick="changeSlide(3,1)"><i class="fas fa-chevron-right"></i></button>
-              <div class="slider-indicators">
-                <div class="indicator active" onclick="goToSlide(3,0)"></div><div class="indicator" onclick="goToSlide(3,1)"></div>
-                <div class="indicator" onclick="goToSlide(3,2)"></div><div class="indicator" onclick="goToSlide(3,3)"></div>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Gaming Mouse Pro</h5>
-              <div class="rating"><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><span class="ms-1 text-muted">(203)</span></div>
-              <p class="card-description">High-precision gaming mouse with RGB lighting, customizable buttons, and ultra-responsive sensor.</p>
-              <div class="price-section"><span class="card-original-price">₹3,499</span><span class="card-price">₹1,999</span></div>
-              <a href="#" class="btn btn-view-details">View Details</a>
-            </div>
-          </div>
-        </div>
+      <div class="row" id="featuredProductsRow">
+        <!-- Featured products will be loaded here from the API -->
       </div>
     </div>
   </section>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', async function() {
+    const container = document.getElementById('featuredProductsRow');
+    const API_BASE = 'http://127.0.0.1:8000/api/productlisting';
+    const categories = [
+      { key: 'laptop', label: 'Laptop' },
+      { key: 'laptop accessories', label: 'Laptop Accessories' },
+      { key: 'smartphone', label: 'Smartphone' },
+      { key: 'mobile accessories', label: 'Mobile Accessories' }
+    ];
+
+    function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    async function fetchOneByCategory(cat) {
+      const url = `${API_BASE}?category=${encodeURIComponent(cat)}&minPrice=0&page=1&limit=1&sortby=-1`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('Fetch failed for ' + cat);
+      const data = await res.json();
+      return (data.products && data.products[0]) || null;
+    }
+
+    try {
+      const mobileOverrideURL = 'http://127.0.0.1:8000/api/productlisting?minPrice=0&query=OPPO%20Reno14%205G%20%2CForest%20Green%2C%208GB%20RAM%2C%20256GB%20Storage&page=1&limit=24&sortby=-1';
+      const laptopAccessoryOverrideURL = 'http://127.0.0.1:8000/api/productlisting?minPrice=0&query=amazon%20basics%20Wired%20Gaming%20Mouse%20with%20RGB%20LED%2C%20Lightweight%20and%20Durable%20Design%2C%20DPI%20Up%20to%202400%2C%20Compatible%20with%20Windows%20and%20MAC&page=1&limit=24&sortby=-1';
+      const mobileAccessoryOverrideURL = 'http://127.0.0.1:8000/api/productlisting?minPrice=0&query=' + encodeURIComponent('ZEBRONICS Bro in Ear Wired Earphones with Mic, 3.5mm Audio Jack, 10mm Drivers, Phone/Tablet Compatible (Black)') + '&page=1&limit=24&sortby=-1';
+      const promises = categories.map(async c => {
+        try {
+          if (c.key === 'smartphone') {
+            const ov = await fetch(mobileOverrideURL).then(r => r.ok ? r.json() : Promise.reject(new Error('Failed override'))).catch(e => { console.warn(e); return null; });
+            if (ov && ov.products && ov.products[0]) return ov.products[0];
+            return await fetchOneByCategory(c.key).catch(e => { console.warn(e); return null; });
+          }
+          if (c.key === 'laptop accessories') {
+            const ov = await fetch(laptopAccessoryOverrideURL).then(r => r.ok ? r.json() : Promise.reject(new Error('Failed laptop accessory override'))).catch(e => { console.warn(e); return null; });
+            if (ov && ov.products && ov.products[0]) return ov.products[0];
+            return await fetchOneByCategory(c.key).catch(e => { console.warn(e); return null; });
+          }
+          if (c.key === 'mobile accessories') {
+            const ov = await fetch(mobileAccessoryOverrideURL).then(r => r.ok ? r.json() : Promise.reject(new Error('Failed mobile accessory override'))).catch(e => { console.warn(e); return null; });
+            if (ov && ov.products && ov.products[0]) return ov.products[0];
+            return await fetchOneByCategory(c.key).catch(e => { console.warn(e); return null; });
+          }
+          return await fetchOneByCategory(c.key).catch(e => { console.warn(e); return null; });
+        } catch (err) {
+          console.warn('Error fetching for', c.key, err);
+          return null;
+        }
+      });
+      const items = await Promise.all(promises);
+      const any = items.some(x => x);
+      if (!any) {
+        container.innerHTML = '<p class="text-center" style="color:var(--text-light)">No featured products available.</p>';
+        return;
+      }
+
+      container.innerHTML = items.map((p, idx) => {
+        if (!p) return `<div class="col-lg-3 col-md-6 mb-4"><div class="card product-card h-100 shadow-sm"><div class="card-body"><p style="color:var(--text-light)">No product</p></div></div></div>`;
+        const id = p._id || p.id || '';
+        const title = p.title || p.name || categories[idx].label;
+        // prefer image.thumbnail
+        let thumb = '';
+        if (p.image) {
+          if (typeof p.image === 'string') thumb = p.image;
+          else if (p.image.thumbnail) thumb = p.image.thumbnail;
+          else if (Array.isArray(p.image.urls) && p.image.urls.length) thumb = p.image.urls[0];
+          else if (Array.isArray(p.image) && p.image.length) thumb = p.image[0];
+        }
+        thumb = thumb || p.image_url || 'https://via.placeholder.com/400x300?text=No+Image';
+        const price = p.discountprice || p.vendors?.Flipkart?.discountprice || p.price || p.discounted_price || '';
+        const original = p.mrp || p.original_price || '';
+        const badge = (p.badge || ((original && price && Number(price) < Number(original)) ? 'Sale' : 'New')) || 'New';
+        const badgeClass = badge.toLowerCase() === 'sale' ? 'sale' : (badge.toLowerCase() === 'popular' ? 'popular' : '');
+        const desc = (p.description || p.card_description || p.comment || '').substring(0,120);
+        const reviews = p.reviews || p.rating_count || p.vendors?.Flipkart?.rating || p.rating || 0;
+
+        return `<div class="col-lg-3 col-md-6 mb-4">
+          <div class="card product-card h-100 shadow-sm">
+            <div class="product-badge ${badgeClass}">${esc(badge)}</div>
+            <div class="image-slider">
+              <div class="slider-container" data-slider="${idx}">
+                <div class="slide"><img src="${esc(thumb)}" alt="${esc(title)}"></div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">${esc(title)}</h5>
+              <div class="rating"><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star empty"></i><span class="ms-1 text-muted">(${esc(String(reviews))})</span></div>
+              <p class="card-description">${esc(desc)}</p>
+              <div class="price-section">${original?`<span class="card-original-price">₹${esc(String(original))}</span>`:''}<span class="card-price">₹${esc(String(price))}</span></div>
+              <a href="product.html?product_id=${encodeURIComponent(id)}" class="btn btn-view-details">View Details</a>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+
+    } catch (err) {
+      console.error(err);
+      container.innerHTML = '<p class="text-center" style="color:var(--text-light)">Failed to load products.</p>';
+    }
+  });
+  </script>
 
   <!-- FOOTER -->
   <footer class="footer" id="contact" style="background-color:#000;color:#fff;padding:2rem 0;">
@@ -859,29 +857,49 @@
       });
     });
 
-    // Comparison search
-    const searchableProducts = [
-      {id:1,name:'iPhone 15 Pro Max',category:'Mobile',price:'₹1,34,900',image:'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=150&h=150&fit=crop'},
-      {id:2,name:'Samsung Galaxy S24 Ultra',category:'Mobile',price:'₹1,24,999',image:'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=150&h=150&fit=crop'},
-      {id:3,name:'OnePlus 12',category:'Mobile',price:'₹64,999',image:'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=150&h=150&fit=crop'},
-      {id:4,name:'MacBook Air M3',category:'Laptop',price:'₹1,14,900',image:'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=150&h=150&fit=crop'},
-      {id:5,name:'Dell XPS 13',category:'Laptop',price:'₹89,990',image:'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=150&h=150&fit=crop'},
-      {id:6,name:'HP Spectre x360',category:'Laptop',price:'₹1,25,999',image:'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=150&h=150&fit=crop'},
-      {id:7,name:'Sony WH-1000XM5',category:'Accessories',price:'₹29,990',image:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=150&h=150&fit=crop'},
-      {id:8,name:'Apple AirPods Pro',category:'Accessories',price:'₹24,900',image:'https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=150&h=150&fit=crop'}
-    ];
+    // Comparison search - will be loaded from backend
+    let searchableProducts = [];
+    const COMPARISON_API = 'http://127.0.0.1:8000/api/productlisting?minPrice=0&page=1&limit=24&sortby=-1';
+
+    async function fetchComparisonProducts() {
+      try {
+        const res = await fetch(COMPARISON_API);
+        if (!res.ok) throw new Error('Failed to load comparison products');
+        const data = await res.json();
+        const products = (data.products || []).map((p, i) => ({
+          id: i+1,
+          _id: p._id || p.id || '',
+          name: p.title || p.name || '',
+          category: p.category || '',
+          price: p.discountprice || p.vendors?.Flipkart?.discountprice || p.price || '',
+          image: (p.image && (p.image.thumbnail || (Array.isArray(p.image.urls) && p.image.urls[0]) || (Array.isArray(p.image) && p.image[0]))) || p.image_url || ''
+        }));
+        searchableProducts = products;
+        return products;
+      } catch (err) {
+        console.error('[Comparison] ', err);
+        searchableProducts = [];
+        return [];
+      }
+    }
 
     function createSearchModal() {
       const modalHTML = `<div id="productSearchModal" class="search-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:10000;display:none;align-items:center;justify-content:center;"><div class="search-modal-overlay" onclick="closeSearchModal()" style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);backdrop-filter:blur(5px);"></div><div class="search-modal-content" style="position:relative;background:linear-gradient(145deg,#1b1c33,#20224a);border-radius:20px;width:90%;max-width:600px;max-height:80vh;overflow:hidden;border:1px solid rgba(0,191,255,0.3);box-shadow:0 20px 40px rgba(0,0,0,0.5);"><div style="padding:20px;border-bottom:1px solid rgba(0,191,255,0.2);display:flex;align-items:center;"><h3 style="color:#00bfff;margin:0;font-size:1.5rem;">Select Product to Compare</h3><button onclick="closeSearchModal()" style="background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;margin-left:auto;line-height:1;">×</button></div><div style="position:relative;padding:20px;"><input type="text" id="productSearchInput" placeholder="Search for products..." autocomplete="off" style="width:100%;padding:15px 50px 15px 20px;border:1px solid rgba(0,191,255,0.3);border-radius:25px;background:rgba(255,255,255,0.05);color:#fff;font-size:1rem;outline:none;"><i class="fas fa-search" style="position:absolute;right:35px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0.5);"></i></div><div id="searchFilters" style="padding:0 20px 20px;display:flex;gap:10px;flex-wrap:wrap;"><button class="s-filter active" data-category="all" style="padding:8px 16px;border:1px solid rgba(0,191,255,0.3);background:rgba(0,191,255,0.1);color:#fff;border-radius:20px;cursor:pointer;">All</button><button class="s-filter" data-category="Mobile" style="padding:8px 16px;border:1px solid rgba(0,191,255,0.3);background:rgba(0,191,255,0.1);color:#fff;border-radius:20px;cursor:pointer;">Mobiles</button><button class="s-filter" data-category="Laptop" style="padding:8px 16px;border:1px solid rgba(0,191,255,0.3);background:rgba(0,191,255,0.1);color:#fff;border-radius:20px;cursor:pointer;">Laptops</button><button class="s-filter" data-category="Accessories" style="padding:8px 16px;border:1px solid rgba(0,191,255,0.3);background:rgba(0,191,255,0.1);color:#fff;border-radius:20px;cursor:pointer;">Accessories</button></div><div id="searchResults" style="max-height:350px;overflow-y:auto;padding:0 20px 20px;"></div></div></div>`;
       document.body.insertAdjacentHTML('beforeend', modalHTML);
     }
 
-    function openSearchModal(cardIndex) {
+    async function openSearchModal(cardIndex) {
       if (!document.getElementById('productSearchModal')) { createSearchModal(); setupSearchListeners(); }
       const modal = document.getElementById('productSearchModal');
       modal.style.display = 'flex';
       modal.setAttribute('data-card-index', cardIndex);
       document.getElementById('productSearchInput').focus();
+      // fetch products if not loaded
+      if (!searchableProducts.length) {
+        const loader = document.getElementById('searchResults');
+        if (loader) loader.innerHTML = '<p style="text-align:center;color:rgba(255,255,255,0.7);padding:20px;">Loading products...</p>';
+        await fetchComparisonProducts();
+      }
       displaySearchResults(searchableProducts);
     }
     function closeSearchModal() {

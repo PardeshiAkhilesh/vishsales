@@ -12,7 +12,7 @@ load_dotenv()
 origins = ["*"]
 
 app = FastAPI(
-    title="Vishal Sales API",
+    title="Vishkart API",
     description="E-commerce API backend with auto docs",
     version="1.0.0"
 )
