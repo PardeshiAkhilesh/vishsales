@@ -7,3 +7,8 @@ PyJWT==2.8.0
 python-multipart==0.0.6
 python-dotenv==1.0.0
 openai
+selenium==4.15.0
+beautifulsoup4==4.12.2
+pandas==2.2.3
+webdriver-manager==4.6.0
+requests==2.31.0
