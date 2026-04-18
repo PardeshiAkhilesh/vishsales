@@ -23,8 +23,21 @@ Return ONLY a valid JSON object with these optional fields:
   "ram": "e.g. 8GB or null",
   "storage": "e.g. 128GB or null",
   "processor": "e.g. snapdragon or null",
-  "query": "short keyword for title search or null"
+  "query": "short brand/model keyword for title search, or null. Do NOT put words like best/top/good/cheap/budget here",
+  "sort_by": "rating" | "price_asc" | "price_desc" | null
 }
+
+Category mapping rules (strictly follow these):
+- "mobile", "mobiles", "phone", "phones", "smartphone", "smartphones", "handset" -> "smartphone"
+- "laptop", "laptops", "notebook", "notebooks" -> "laptop"
+- "laptop accessory", "laptop accessories" -> "laptop accessories"
+- "mobile accessory", "mobile accessories", "earphone", "charger", "cover", "case" -> "mobile accessories"
+
+Sort rules:
+- "best", "top", "recommended", "highest rated", "good" -> "rating"
+- "cheapest", "lowest price", "budget", "affordable", "under X" -> "price_asc"
+- "expensive", "premium", "highest price" -> "price_desc"
+
 Do not include any explanation outside the JSON."""
 
 
@@ -71,8 +84,17 @@ def extract_intent(user_message: str) -> dict:
 def build_mongo_filter(intent: dict) -> dict:
     filters = {}
 
+    CATEGORY_MAP = {
+        "mobile": "smartphone", "mobiles": "smartphone", "phone": "smartphone",
+        "phones": "smartphone", "handset": "smartphone", "smartphones": "smartphone",
+        "laptop": "laptop", "laptops": "laptop", "notebook": "laptop", "notebooks": "laptop",
+        "laptop accessories": "laptop accessories", "laptop accessory": "laptop accessories",
+        "mobile accessories": "mobile accessories", "mobile accessory": "mobile accessories",
+        "smartphone": "smartphone",
+    }
     if intent.get("category"):
-        filters["category"] = intent["category"].lower()
+        raw_cat = intent["category"].lower().strip()
+        filters["category"] = CATEGORY_MAP.get(raw_cat, raw_cat)
 
     if intent.get("brand"):
         filters["brand"] = {"$regex": intent["brand"], "$options": "i"}
@@ -80,12 +102,22 @@ def build_mongo_filter(intent: dict) -> dict:
     min_p = intent.get("min_price")
     max_p = intent.get("max_price")
     if min_p is not None or max_p is not None:
-        price_cond = {}
+        expr_conds = []
+        # Handle both discounted_price (Flipkart/JioMart) and discounted_Price (Amazon/Croma)
+        def price_expr(field):
+            return {"$toDouble": {"$replaceAll": {
+                "input": {"$replaceAll": {"input": {"$toString": field}, "find": "₹", "replacement": ""}},
+                "find": ",", "replacement": ""
+            }}}
+        p_lower = price_expr("$discounted_price")
+        p_upper = price_expr("$discounted_Price")
+        # Use whichever field is non-null/non-zero
+        p_val = {"$cond": [{"$gt": [p_lower, 0]}, p_lower, p_upper]}
         if min_p is not None:
-            price_cond["$gte"] = min_p
+            expr_conds.append({"$gte": [p_val, float(min_p)]})
         if max_p is not None:
-            price_cond["$lte"] = max_p
-        filters["discounted_price"] = price_cond
+            expr_conds.append({"$lte": [p_val, float(max_p)]})
+        filters["$expr"] = {"$and": expr_conds} if len(expr_conds) > 1 else expr_conds[0]
 
     def make_regex(value: str) -> dict:
         # Normalize "8GB" -> "8" so it matches "8 GB RAM", "8GB", "8 gb" etc.
@@ -141,17 +173,21 @@ def format_product_summary(products: list) -> str:
     """Serialize only the relevant fields to keep the prompt concise."""
     summaries = []
     for p in products[:5]:
-        details = p.get("features", {}).get("details", {}) or {}
+        # Croma wraps product data under a "product" key
+        prod = p.get("product", p)
 
-        # Case-insensitive section lookup
-        storage = iget(details, "storage") or {}
-        performance = iget(details, "performance") or {}
-        display = iget(details, "display") or {}
-        camera = iget(details, "camera") or {}
-        battery = iget(details, "battery") or {}
+        # Handle price field variants across all scrapers:
+        # Flipkart/JioMart/VijaysSales: discounted_price | Amazon/Croma: discounted_Price
+        discounted = (
+            prod.get("discounted_price")
+            or prod.get("discounted_Price")
+            or prod.get("price")
+            or ""
+        )
+        original = prod.get("price") or prod.get("actual_price") or ""
 
         # Handle thumbnail across all scraper schemas
-        image_field = p.get("image") or p.get("image_url") or {}
+        image_field = prod.get("image") or prod.get("image_url") or {}
         if isinstance(image_field, dict):
             thumbnail = image_field.get("thumbnail", "")
         elif isinstance(image_field, list):
@@ -159,14 +195,25 @@ def format_product_summary(products: list) -> str:
         else:
             thumbnail = str(image_field) if image_field else ""
 
+        # Features: try features.details, then specifications.details (Croma)
+        details = prod.get("features", {}).get("details", {}) or {}
+        if not details:
+            details = prod.get("specifications", {}).get("details", {}) or {}
+
+        storage = iget(details, "storage") or {}
+        performance = iget(details, "performance") or {}
+        display = iget(details, "display") or {}
+        camera = iget(details, "camera") or {}
+        battery = iget(details, "battery") or {}
+
         summary = {
-            "title": p.get("title", ""),
-            "brand": p.get("brand", ""),
-            "price": p.get("price", ""),
-            "discounted_price": p.get("discounted_price", ""),
-            "rating": p.get("rating", ""),
+            "title": prod.get("title", "") or prod.get("product_name", ""),
+            "brand": prod.get("brand", ""),
+            "price": original,
+            "discounted_price": discounted,
+            "rating": prod.get("rating", ""),
             "thumbnail": thumbnail,
-            "offers": p.get("offers", []),
+            "offers": prod.get("offers", []),
             "specs": {
                 "ram": iget(storage, "ram"),
                 "storage": iget(storage, "rom"),
@@ -210,11 +257,23 @@ def chat_with_products(user_message: str, conversation_history: list = []) -> di
     mongo_filter = build_mongo_filter(intent)
 
     collection = mongo_client[DB_NAME][COLLECTION_NAME]
-    products = list(collection.find(mongo_filter).limit(10))
-    products = [convert_objectid(p) for p in products]
 
-    # Fallback: title search using query or ram/brand keywords
+    # Determine sort order
+    sort_by = intent.get("sort_by")
+    if sort_by == "rating":
+        cursor = collection.find(mongo_filter).sort("rating", -1).limit(10)
+    elif sort_by == "price_asc":
+        cursor = collection.find(mongo_filter).sort("discounted_price", 1).limit(10)
+    elif sort_by == "price_desc":
+        cursor = collection.find(mongo_filter).sort("discounted_price", -1).limit(10)
+    else:
+        cursor = collection.find(mongo_filter).limit(10)
+
+    products = [convert_objectid(p) for p in cursor]
+
+    # Fallback: title search using query or ram/brand keywords, keeping price filter
     if not products:
+        mapped_cat = mongo_filter.get("category")
         fallback_keyword = (
             intent.get("query")
             or intent.get("brand")
@@ -222,10 +281,23 @@ def chat_with_products(user_message: str, conversation_history: list = []) -> di
         )
         if fallback_keyword:
             fallback = {"title": {"$regex": fallback_keyword, "$options": "i"}}
-            if intent.get("category"):
-                fallback["category"] = intent["category"].lower()
-            products = list(collection.find(fallback).limit(10))
-            products = [convert_objectid(p) for p in products]
+            if mapped_cat:
+                fallback["category"] = mapped_cat
+            if "$expr" in mongo_filter:
+                fallback["$expr"] = mongo_filter["$expr"]
+            if sort_by == "rating":
+                products = [convert_objectid(p) for p in collection.find(fallback).sort("rating", -1).limit(10)]
+            else:
+                products = [convert_objectid(p) for p in collection.find(fallback).limit(10)]
+        # Last resort: price-only search with category
+        if not products and "$expr" in mongo_filter:
+            last_resort = {"$expr": mongo_filter["$expr"]}
+            if mapped_cat:
+                last_resort["category"] = mapped_cat
+            if sort_by == "rating":
+                products = [convert_objectid(p) for p in collection.find(last_resort).sort("rating", -1).limit(10)]
+            else:
+                products = [convert_objectid(p) for p in collection.find(last_resort).limit(10)]
 
     chat_response = generate_chat_response(user_message, products, conversation_history)
 
@@ -233,27 +305,3 @@ def chat_with_products(user_message: str, conversation_history: list = []) -> di
         "message": chat_response,
         "products": products,
     }
-
-
-def get_chatbot_response(message: str) -> str:
-    """Simple chatbot response without OpenAI dependency"""
-    message_lower = message.lower()
-    
-    # Simple keyword-based responses
-    if any(word in message_lower for word in ['hello', 'hi', 'hey']):
-        return "Hello! I'm here to help you find the perfect products. What are you looking for today?"
-    
-    if any(word in message_lower for word in ['laptop', 'computer']):
-        return "Great! We have a wide range of laptops. Are you looking for gaming laptops, business laptops, or something else?"
-    
-    if any(word in message_lower for word in ['mobile', 'phone', 'smartphone']):
-        return "We have excellent smartphones available! Are you interested in any particular brand like Samsung, Apple, or OnePlus?"
-    
-    if any(word in message_lower for word in ['price', 'cost', 'budget']):
-        return "I can help you find products within your budget. What's your price range?"
-    
-    if any(word in message_lower for word in ['thank', 'thanks']):
-        return "You're welcome! Feel free to ask if you need anything else."
-    
-    # Default response
-    return "I'm here to help you find products! You can ask me about laptops, mobiles, accessories, or any specific brand you're interested in."

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile - VISHKART</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: linear-gradient(135deg, #0b0c1e 0%, #1a1d3a 50%, #0d1126 100%);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .profile-container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.5); font-size: 0.875rem;
+      text-decoration: none; margin-bottom: 32px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #00bfff; }
+
+    /* Header card */
+    .profile-header {
+      background: linear-gradient(135deg, rgba(0,191,255,0.15), rgba(0,102,204,0.1));
+      border: 1px solid rgba(0,191,255,0.25);
+      border-radius: 20px;
+      padding: 36px;
+      text-align: center;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .profile-header::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 200px; height: 200px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,191,255,0.1), transparent 70%);
+    }
+
+    .avatar-circle {
+      width: 90px; height: 90px; border-radius: 50%;
+      background: linear-gradient(135deg, #00bfff, #0066cc);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; font-weight: 700; color: #fff;
+      margin: 0 auto 16px;
+      box-shadow: 0 0 30px rgba(0,191,255,0.4);
+      border: 3px solid rgba(0,191,255,0.4);
+    }
+
+    .profile-header h2 {
+      font-size: 1.6rem; font-weight: 700; margin-bottom: 4px;
+    }
+    .profile-header .member-since {
+      font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-top: 8px;
+    }
+
+    .badge-verified {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(77,255,145,0.1); border: 1px solid rgba(77,255,145,0.3);
+      color: #4dff91; border-radius: 50px; padding: 4px 12px;
+      font-size: 0.75rem; font-weight: 600; margin-top: 10px;
+    }
+
+    /* Info card */
+    .info-card {
+      background: rgba(27,28,51,0.9);
+      border: 1px solid rgba(0,191,255,0.15);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+
+    .info-card h4 {
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; color: #00bfff;
+      margin-bottom: 20px; display: flex; align-items: center; gap: 8px;
+    }
+
+    .info-row {
+      display: flex; align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .info-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: rgba(0,191,255,0.08); border: 1px solid rgba(0,191,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      color: #00bfff; font-size: 0.85rem; flex-shrink: 0; margin-right: 14px;
+    }
+
+    .info-label { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-bottom: 2px; }
+    .info-value { font-size: 0.95rem; font-weight: 500; color: #fff; }
+
+    /* Edit inline */
+    .info-edit-wrap { flex: 1; }
+    .edit-input {
+      background: rgba(0,191,255,0.06); border: 1px solid rgba(0,191,255,0.3);
+      border-radius: 8px; padding: 6px 12px; color: #fff;
+      font-size: 0.95rem; width: 100%; outline: none;
+      display: none;
+    }
+    .edit-input:focus { border-color: #00bfff; }
+
+    .edit-btn {
+      background: none; border: none; color: rgba(255,255,255,0.3);
+      cursor: pointer; padding: 4px 8px; font-size: 0.8rem;
+      transition: color 0.2s; margin-left: auto; flex-shrink: 0;
+    }
+    .edit-btn:hover { color: #00bfff; }
+
+    /* Action buttons */
+    .action-card {
+      background: rgba(27,28,51,0.9);
+      border: 1px solid rgba(0,191,255,0.15);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .action-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px 24px; cursor: pointer;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: background 0.15s; text-decoration: none; color: #ddd;
+    }
+    .action-item:last-child { border-bottom: none; }
+    .action-item:hover { background: rgba(0,191,255,0.07); color: #fff; }
+    .action-item i { width: 18px; text-align: center; color: #00bfff; }
+    .action-item span { font-size: 0.9rem; }
+    .action-item .arrow { margin-left: auto; color: rgba(255,255,255,0.2); font-size: 0.75rem; }
+
+    .action-item.danger { color: #ff6b6b; }
+    .action-item.danger i { color: #ff6b6b; }
+    .action-item.danger:hover { background: rgba(255,107,107,0.08); }
+
+    /* Save btn */
+    .save-btn {
+      display: none; width: 100%; padding: 13px;
+      background: linear-gradient(135deg, #00bfff, #0066cc);
+      border: none; border-radius: 10px; color: #fff;
+      font-size: 0.95rem; font-weight: 600; cursor: pointer;
+      transition: all 0.2s; margin-top: 16px;
+    }
+    .save-btn:hover { box-shadow: 0 6px 20px rgba(0,191,255,0.4); transform: translateY(-1px); }
+  </style>
+</head>
+<body>
+
+  <div class="profile-container">
+
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+
+    <!-- Header -->
+    <div class="profile-header">
+      <div class="avatar-circle" id="avatarCircle">?</div>
+      <h2 id="headerName">Loading...</h2>
+      <div id="headerEmail" style="color:rgba(255,255,255,0.55);font-size:0.9rem;"></div>
+      <div class="badge-verified"><i class="fas fa-check-circle"></i> Verified Account</div>
+      <div class="member-since" id="memberSince"></div>
+    </div>
+
+    <!-- Account Info -->
+    <div class="info-card">
+      <h4><i class="fas fa-user-circle"></i> Account Information</h4>
+
+      <div class="info-row">
+        <div class="info-icon"><i class="fas fa-user"></i></div>
+        <div class="info-edit-wrap">
+          <div class="info-label">Full Name</div>
+          <div class="info-value" id="displayName">—</div>
+          <input class="edit-input" id="editName" type="text" placeholder="Enter your name">
+        </div>
+        <button class="edit-btn" onclick="toggleEdit()" title="Edit name">
+          <i class="fas fa-pen" id="editIcon"></i>
+        </button>
+      </div>
+
+      <div class="info-row">
+        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+        <div class="info-edit-wrap">
+          <div class="info-label">Email Address</div>
+          <div class="info-value" id="displayEmail">—</div>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-icon"><i class="fas fa-id-badge"></i></div>
+        <div class="info-edit-wrap">
+          <div class="info-label">User ID</div>
+          <div class="info-value" id="displayId" style="font-size:0.8rem;color:rgba(255,255,255,0.4);font-family:monospace;">—</div>
+        </div>
+      </div>
+
+      <button class="save-btn" id="saveBtn" onclick="saveName()">
+        <i class="fas fa-check"></i> Save Changes
+      </button>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="action-card">
+      <a href="#" class="action-item">
+        <i class="fas fa-shopping-bag"></i>
+        <span>My Orders</span>
+        <i class="fas fa-chevron-right arrow"></i>
+      </a>
+      <a href="#" class="action-item">
+        <i class="fas fa-heart"></i>
+        <span>Wishlist</span>
+        <i class="fas fa-chevron-right arrow"></i>
+      </a>
+      <a href="contact.html" class="action-item">
+        <i class="fas fa-headset"></i>
+        <span>Contact Support</span>
+        <i class="fas fa-chevron-right arrow"></i>
+      </a>
+    </div>
+
+    <!-- Logout -->
+    <div class="action-card">
+      <div class="action-item danger" onclick="logoutUser()">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Logout</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem('vishal_user') || 'null');
+
+    if (!user) {
+      window.location.href = 'register.html';
+    } else {
+      const initials = user.name
+        ? user.name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2)
+        : 'U';
+
+      document.getElementById('avatarCircle').textContent  = initials;
+      document.getElementById('headerName').textContent    = user.name  || 'User';
+      document.getElementById('headerEmail').textContent   = user.email || '';
+      document.getElementById('displayName').textContent   = user.name  || '—';
+      document.getElementById('displayEmail').textContent  = user.email || '—';
+      document.getElementById('displayId').textContent     = user.id    || '—';
+      document.getElementById('editName').value            = user.name  || '';
+
+      if (user.created_at) {
+        const d = new Date(user.created_at);
+        document.getElementById('memberSince').textContent =
+          'Member since ' + d.toLocaleDateString('en-IN', { month: 'long', year: 'numeric' });
+      }
+    }
+
+    let editing = false;
+
+    function toggleEdit() {
+      editing = !editing;
+      document.getElementById('displayName').style.display = editing ? 'none' : 'block';
+      document.getElementById('editName').style.display    = editing ? 'block' : 'none';
+      document.getElementById('saveBtn').style.display     = editing ? 'block' : 'none';
+      document.getElementById('editIcon').className        = editing ? 'fas fa-times' : 'fas fa-pen';
+      if (editing) document.getElementById('editName').focus();
+    }
+
+    function saveName() {
+      const newName = document.getElementById('editName').value.trim();
+      if (!newName) return;
+      user.name = newName;
+      localStorage.setItem('vishal_user', JSON.stringify(user));
+
+      const initials = newName.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
+      document.getElementById('avatarCircle').textContent = initials;
+      document.getElementById('headerName').textContent   = newName;
+      document.getElementById('displayName').textContent  = newName;
+      toggleEdit();
+    }
+
+    function logoutUser() {
+      localStorage.removeItem('vishal_token');
+      localStorage.removeItem('vishal_user');
+      window.location.href = 'register.html';
+    }
+  </script>
+
+</body>
+</html>

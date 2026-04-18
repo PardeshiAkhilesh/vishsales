@@ -1,5 +1,6 @@
 import json
 from typing import List, Optional, Any
+import threading
 
 from fastapi import APIRouter, HTTPException, Depends
 from fastapi.responses import JSONResponse
@@ -15,6 +16,7 @@ from database.mongo import client as mongo_client, get_db
 from services.chatbot import chat_with_products
 from models.schemas import *
 from services.task import hash_password, verify_password, create_token, decode_token
+from services.email_service import send_welcome_email, send_contact_email, send_contact_confirmation
 
 load_dotenv()
 
@@ -233,12 +235,14 @@ async def register(user: UserRegister):
     if db.users.find_one({"email": user.email}):
         raise HTTPException(status_code=400, detail="Email already registered")
     hashed = hash_password(user.password)
-    new_user = {"name": user.name, "email": user.email, 
-                "password": hashed, "phone": user.phone, 
+    new_user = {"name": user.name, "email": user.email,
+                "password": hashed, "phone": user.phone,
                 "created_at": datetime.now()}
     result = db.users.insert_one(new_user)
     token = create_token({"id": str(result.inserted_id), "email": user.email})
-    return {"message": "Registered successfully", "token": token, 
+    # Send welcome email in background so it doesn't delay the response
+    threading.Thread(target=send_welcome_email, args=(user.name, user.email), daemon=True).start()
+    return {"message": "Registered successfully", "token": token,
             "user": {"id": str(result.inserted_id), "name": user.name, "email": user.email}}
 
 @router.post("/auth/login")
@@ -372,6 +376,19 @@ async def submit_contact(form: ContactForm):
     data = form.dict()
     data["submitted_at"] = datetime.now()
     db.contacts.insert_one(data)
+    # Parse subject from message field (frontend sends "subject: message")
+    raw_message = data.get("message", "")
+    if ":" in raw_message:
+        subject, message = raw_message.split(":", 1)
+        subject, message = subject.strip(), message.strip()
+    else:
+        subject, message = "General Inquiry", raw_message
+    name  = data.get("name", "Customer")
+    email = data.get("email", "")
+    phone = data.get("phone", "")
+    # Notify store owner + send confirmation to user (both in background)
+    threading.Thread(target=send_contact_email,    args=(name, email, phone, subject, message), daemon=True).start()
+    threading.Thread(target=send_contact_confirmation, args=(name, email, subject), daemon=True).start()
     return {"message": "Thank you! We'll get back to you soon."}
 
 
