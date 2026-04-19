@@ -16,6 +16,5 @@ beautifulsoup4
 requests
 
 pandas==2.2.3
-webdriver-manager>=4.0.0
 
 typing-extensions>=4.8.0
